@@ -2220,10 +2220,12 @@ memorySubmit.addEventListener(
 
 
             alert(
-                currentLanguage === "kz"
-                ? "Естелікті сақтау кезінде қате пайда болды."
-                : "Произошла ошибка при сохранении воспоминания."
-            );
+    "ОШИБКА SUPABASE:\n\n" +
+    "message: " + error.message +
+    "\ncode: " + error.code +
+    "\ndetails: " + error.details +
+    "\nhint: " + error.hint
+);
 
 
             memorySubmit.disabled = false;
