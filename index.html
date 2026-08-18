@@ -2067,43 +2067,36 @@ feelingButtons.forEach(function(button){
 
 
 /* =====================================================
-   SUPABASE — LOAD MEMORIES
+   SUPABASE MEMORIES
 ===================================================== */
 
 async function renderMemories(){
 
-    memoriesList.innerHTML = "";
+    const list =
+        document.getElementById("memoriesList");
 
+    list.innerHTML = "";
 
-    const { data, error } =
-        await supabaseClient
-            .from("memories")
-            .select("*")
-            .order("created_at", {
-                ascending:true
-            });
-
+    const { data, error } = await supabaseClient
+        .from("memories")
+        .select("*")
+        .order("created_at", { ascending: true });
 
     if(error){
 
-        console.error(
-            "Supabase load error:",
-            error
-        );
-
+        console.error("Supabase loading error:", error);
 
         const empty =
             document.createElement("div");
 
-        empty.className =
-            "empty-memories";
+        empty.className = "empty-memories";
 
         empty.textContent =
             currentLanguage === "kz"
             ? "Естеліктерді жүктеу мүмкін болмады."
             : "Не удалось загрузить воспоминания.";
 
-        memoriesList.appendChild(empty);
+        list.appendChild(empty);
 
         return;
     }
@@ -2114,15 +2107,14 @@ async function renderMemories(){
         const empty =
             document.createElement("div");
 
-        empty.className =
-            "empty-memories";
+        empty.className = "empty-memories";
 
         empty.textContent =
             currentLanguage === "kz"
             ? "Мұнда әзірге ешқандай естелік жоқ."
             : "Здесь пока нет воспоминаний.";
 
-        memoriesList.appendChild(empty);
+        list.appendChild(empty);
 
         return;
     }
@@ -2133,15 +2125,13 @@ async function renderMemories(){
         const card =
             document.createElement("div");
 
-        card.className =
-            "memory-card";
+        card.className = "memory-card";
 
 
         const text =
             document.createElement("p");
 
-        text.className =
-            "memory-card-text";
+        text.className = "memory-card-text";
 
         text.textContent =
             "«" + memory.text + "»";
@@ -2150,8 +2140,7 @@ async function renderMemories(){
         const date =
             document.createElement("div");
 
-        date.className =
-            "memory-card-date";
+        date.className = "memory-card-date";
 
 
         const createdDate =
@@ -2165,7 +2154,7 @@ async function renderMemories(){
         card.appendChild(text);
         card.appendChild(date);
 
-        memoriesList.appendChild(card);
+        list.appendChild(card);
 
     });
 
@@ -2173,7 +2162,7 @@ async function renderMemories(){
 
 
 /* =====================================================
-   ADD MEMORY — SUPABASE
+   ADD MEMORY
 ===================================================== */
 
 memorySubmit.addEventListener(
@@ -2190,19 +2179,16 @@ memorySubmit.addEventListener(
 
             memoryInput.focus();
 
-            memoryInput.placeholder =
-                currentLanguage === "kz"
-                ? "Алдымен бір нәрсе жаз..."
-                : "Сначала напиши что-нибудь...";
-
             return;
         }
 
 
-        /* BUTTON STATE */
+        /* BUTTON LOADING */
+
+        const originalText =
+            memorySubmit.textContent;
 
         memorySubmit.disabled = true;
-
 
         memorySubmit.textContent =
             currentLanguage === "kz"
@@ -2210,14 +2196,14 @@ memorySubmit.addEventListener(
             : "СОХРАНЕНИЕ...";
 
 
-        /* INSERT INTO SUPABASE */
+        /* SEND TO SUPABASE */
 
         const { data, error } =
             await supabaseClient
                 .from("memories")
                 .insert([
                     {
-                        text:text
+                        text: text
                     }
                 ])
                 .select();
@@ -2228,24 +2214,22 @@ memorySubmit.addEventListener(
         if(error){
 
             console.error(
-                "Supabase insert error:",
+                "Supabase save error:",
                 error
+            );
+
+
+            alert(
+                currentLanguage === "kz"
+                ? "Естелікті сақтау кезінде қате пайда болды."
+                : "Произошла ошибка при сохранении воспоминания."
             );
 
 
             memorySubmit.disabled = false;
 
             memorySubmit.textContent =
-                currentLanguage === "kz"
-                ? "ЕСТЕЛІК ҚАЛДЫРУ ♡"
-                : "ОСТАВИТЬ ВОСПОМИНАНИЕ ♡";
-
-
-            alert(
-                currentLanguage === "kz"
-                ? "Естелікті сақтау кезінде қате шықты."
-                : "Произошла ошибка при сохранении воспоминания."
-            );
+                originalText;
 
             return;
         }
@@ -2259,12 +2243,10 @@ memorySubmit.addEventListener(
         memorySubmit.disabled = false;
 
         memorySubmit.textContent =
-            currentLanguage === "kz"
-            ? "ЕСТЕЛІК ҚАЛДЫРУ ♡"
-            : "ОСТАВИТЬ ВОСПОМИНАНИЕ ♡";
+            originalText;
 
 
-        /* RELOAD LIST */
+        /* UPDATE LIST */
 
         await renderMemories();
 
@@ -2306,7 +2288,7 @@ function formatDate(date){
 
 
 /* =====================================================
-   INITIAL LOAD
+   FIRST LOAD
 ===================================================== */
 
 renderMemories();
