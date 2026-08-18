@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Наш саундтрек</title>
+<title>Our Soundtrack</title>
 
 <style>
+
 :root{
     --bg:#f4f1ed;
     --paper:#fffdfa;
@@ -39,7 +40,10 @@ body{
     box-shadow:0 0 40px rgba(50,40,30,.06);
 }
 
-/* LANGUAGE */
+
+/* =========================
+   LANGUAGE
+========================= */
 
 .language-switcher{
     display:flex;
@@ -76,13 +80,16 @@ body{
     box-shadow:0 3px 10px rgba(0,0,0,.12);
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 h1{
     text-align:center;
     font-size:34px;
     font-weight:400;
-    letter-spacing:5px;
+    letter-spacing:8px;
     margin:0 0 10px;
 }
 
@@ -103,7 +110,10 @@ h1{
     margin:0 auto 28px;
 }
 
-/* PHOTO COVER */
+
+/* =========================
+   PHOTO COVER
+========================= */
 
 .photo-cover{
     position:relative;
@@ -111,8 +121,15 @@ h1{
     margin:20px -10px 50px;
     padding:35px 20px;
     overflow:hidden;
+
     background:
-        linear-gradient(135deg,#eee4d8,#f8f3ec 55%,#e9ded3);
+        linear-gradient(
+            135deg,
+            #eee4d8,
+            #f8f3ec 55%,
+            #e9ded3
+        );
+
     border:1px solid #ded4ca;
     box-shadow:0 15px 35px rgba(60,45,35,.10);
 }
@@ -150,7 +167,7 @@ h1{
     margin:0;
     font-size:31px;
     font-weight:400;
-    letter-spacing:5px;
+    letter-spacing:6px;
 }
 
 .cover-title p{
@@ -268,7 +285,10 @@ h1{
     font-size:25px;
 }
 
-/* RULE */
+
+/* =========================
+   RULE
+========================= */
 
 .rule{
     display:flex;
@@ -290,7 +310,10 @@ h1{
     font-size:18px;
 }
 
-/* SONG */
+
+/* =========================
+   SONG
+========================= */
 
 .song{
     padding-bottom:30px;
@@ -360,125 +383,350 @@ audio{
     margin-top:17px;
 }
 
-/* FEELINGS / QUESTION */
 
-.question-section{
-    margin:45px 0 35px;
-    padding:32px 22px;
-    background:#f5f0eb;
+/* =====================================================
+   NEW INTERACTIVE MEMORY SECTION
+===================================================== */
+
+.memory-section{
+    margin-top:55px;
+    padding:38px 24px 34px;
+    background:#f7f2ec;
     border:1px solid var(--line);
+    position:relative;
+}
+
+.memory-section:before{
+    content:"";
+    display:block;
+    width:45px;
+    height:1px;
+    background:var(--accent);
+    margin:0 auto 25px;
+}
+
+.memory-heading{
     text-align:center;
-}
-
-.question-label{
-    color:#9b918a;
-    font:10px/1.5 Arial,sans-serif;
-    letter-spacing:2.5px;
-    margin-bottom:12px;
-}
-
-.question-title{
-    margin:0 auto 10px;
-    font-size:23px;
-    line-height:1.45;
+    margin-bottom:10px;
+    font-size:25px;
     font-weight:400;
-    max-width:540px;
+    letter-spacing:2px;
 }
 
-.question-subtitle{
-    margin:0 auto 24px;
-    color:#756d67;
-    font-size:13px;
-    line-height:1.7;
-    max-width:500px;
+.memory-subheading{
+    text-align:center;
+    color:var(--muted);
+    font:10px/1.6 Arial,sans-serif;
+    letter-spacing:2px;
+    margin-bottom:32px;
 }
 
-.song-choice{
+
+/* QUESTION */
+
+.memory-question{
+    text-align:center;
+    font-size:16px;
+    line-height:1.6;
+    margin:0 auto 20px;
+    max-width:520px;
+}
+
+
+/* SONG CHOICES */
+
+.song-choices{
     display:flex;
     flex-direction:column;
     gap:9px;
     max-width:520px;
-    margin:0 auto;
+    margin:0 auto 26px;
 }
 
-.song-choice button{
-    appearance:none;
+.song-choice{
     width:100%;
-    border:1px solid #d8d0c9;
+    border:1px solid #d9d0c8;
     background:#fffdfa;
     color:var(--ink);
-    padding:13px 16px;
-    cursor:pointer;
-    font-family:Georgia,"Times New Roman",serif;
+    padding:14px 16px;
     text-align:left;
+    font-family:Georgia,"Times New Roman",serif;
+    cursor:pointer;
     transition:.25s ease;
 }
 
-.song-choice button:hover{
-    background:#eee7e1;
+.song-choice:hover{
+    border-color:var(--accent);
     transform:translateY(-1px);
 }
 
+.song-choice.selected{
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+}
+
+.choice-number{
+    display:inline-block;
+    width:32px;
+    color:#9b918a;
+    font:10px Arial,sans-serif;
+    letter-spacing:1px;
+}
+
+.song-choice.selected .choice-number{
+    color:#ddd;
+}
+
 .choice-title{
-    display:block;
     font-size:14px;
-    line-height:1.4;
 }
 
 .choice-artist{
     display:block;
+    margin-left:32px;
     margin-top:4px;
-    color:#8b817a;
-    font:9px/1.4 Arial,sans-serif;
-    letter-spacing:1.4px;
+    color:var(--muted);
+    font:9px Arial,sans-serif;
+    letter-spacing:1.3px;
 }
 
-.answer{
+.song-choice.selected .choice-artist{
+    color:#d7d0ca;
+}
+
+
+/* RESULT */
+
+.choice-result{
     display:none;
-    margin:25px auto 0;
-    padding:19px 18px;
     max-width:500px;
+    margin:0 auto 35px;
+    padding:18px 20px;
     background:#fffdfa;
-    border:1px solid #ddd4cc;
+    border-left:2px solid var(--accent);
+    text-align:center;
     animation:fadeIn .35s ease;
 }
 
-.answer.show{
+.choice-result.show{
     display:block;
 }
 
-.answer-song{
-    color:var(--accent);
-    font-size:16px;
+.choice-result-title{
+    font-size:15px;
     margin-bottom:8px;
 }
 
-.answer-text{
+.choice-result-text{
+    color:#625b56;
+    font-size:13px;
+    line-height:1.75;
     margin:0;
-    color:#5d5651;
-    font-size:13.5px;
+}
+
+
+/* FEELINGS */
+
+.feeling-question{
+    text-align:center;
+    font-size:16px;
+    line-height:1.6;
+    margin:0 auto 20px;
+    max-width:500px;
+}
+
+.feeling-choices{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:9px;
+    max-width:520px;
+    margin:0 auto 24px;
+}
+
+.feeling-button{
+    border:1px solid #d9d0c8;
+    background:#fffdfa;
+    color:#514a46;
+    padding:11px 15px;
+    border-radius:30px;
+    font:12px Arial,sans-serif;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.feeling-button:hover{
+    border-color:var(--accent);
+}
+
+.feeling-button.selected{
+    background:var(--accent);
+    color:white;
+    border-color:var(--accent);
+}
+
+
+/* FEELING RESULT */
+
+.feeling-result{
+    display:none;
+    text-align:center;
+    max-width:500px;
+    margin:0 auto 35px;
+    color:#625b56;
+    font-size:13px;
+    line-height:1.8;
+    font-style:italic;
+    animation:fadeIn .35s ease;
+}
+
+.feeling-result.show{
+    display:block;
+}
+
+
+/* PERSONAL MESSAGE */
+
+.message-title{
+    text-align:center;
+    font-size:17px;
+    font-weight:400;
+    margin:10px 0 7px;
+}
+
+.message-subtitle{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    margin:0 auto 16px;
+}
+
+.memory-form{
+    max-width:520px;
+    margin:0 auto;
+}
+
+.memory-input{
+    display:block;
+    width:100%;
+    min-height:115px;
+    resize:vertical;
+    border:1px solid #d9d0c8;
+    background:#fffdfa;
+    padding:15px;
+    color:var(--ink);
+    font:14px/1.7 Georgia,"Times New Roman",serif;
+    outline:none;
+}
+
+.memory-input:focus{
+    border-color:var(--accent);
+}
+
+.memory-input::placeholder{
+    color:#aaa29c;
+}
+
+.memory-submit{
+    display:block;
+    margin:13px auto 0;
+    border:0;
+    background:var(--ink);
+    color:white;
+    padding:13px 24px;
+    font:11px Arial,sans-serif;
+    letter-spacing:1.5px;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.memory-submit:hover{
+    background:#4a4541;
+    transform:translateY(-1px);
+}
+
+
+/* SAVED MEMORIES */
+
+.saved-title{
+    text-align:center;
+    margin:38px 0 17px;
+    font-size:16px;
+    font-weight:400;
+}
+
+.memories-list{
+    max-width:520px;
+    margin:0 auto;
+}
+
+.memory-card{
+    position:relative;
+    background:#fffdfa;
+    border:1px solid #e0d8d1;
+    padding:18px 20px 17px;
+    margin-bottom:12px;
+    animation:fadeIn .35s ease;
+}
+
+.memory-card:before{
+    content:"♡";
+    position:absolute;
+    top:10px;
+    right:14px;
+    color:#c5aaa3;
+    font-size:18px;
+}
+
+.memory-card-text{
+    margin:0 22px 10px 0;
+    color:#514a46;
+    font-size:14px;
     line-height:1.75;
 }
+
+.memory-card-date{
+    color:#a29a94;
+    font:9px Arial,sans-serif;
+    letter-spacing:1.2px;
+}
+
+.empty-memories{
+    text-align:center;
+    color:#aaa29c;
+    font-size:12px;
+    line-height:1.6;
+    padding:8px 0;
+}
+
+
+/* ANIMATION */
 
 @keyframes fadeIn{
     from{
         opacity:0;
         transform:translateY(5px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 .bottom-heart{
     text-align:center;
     font-size:42px;
     font-weight:300;
     color:#9b7068;
-    margin:6px 0 26px;
+    margin:35px 0 26px;
 }
 
 .footer{
@@ -492,7 +740,10 @@ audio{
     display:none!important;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -501,8 +752,8 @@ audio{
     }
 
     h1{
-        font-size:26px;
-        letter-spacing:4px;
+        font-size:27px;
+        letter-spacing:6px;
     }
 
     .title{
@@ -575,60 +826,111 @@ audio{
         font-size:20px;
     }
 
-    .question-section{
-        padding:27px 15px;
+    /* NEW BLOCK MOBILE */
+
+    .memory-section{
+        margin-top:45px;
+        padding:30px 15px 28px;
     }
 
-    .question-title{
-        font-size:20px;
+    .memory-heading{
+        font-size:21px;
+        letter-spacing:1.5px;
     }
 
-    .song-choice button{
-        padding:12px 13px;
+    .memory-question,
+    .feeling-question{
+        font-size:15px;
     }
+
+    .song-choice{
+        padding:13px 12px;
+    }
+
+    .choice-title{
+        font-size:13px;
+    }
+
+    .choice-artist{
+        font-size:8px;
+    }
+
+    .feeling-button{
+        padding:10px 13px;
+    }
+
+    .memory-card{
+        padding:16px;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <main class="page">
 
-<!-- LANGUAGE -->
+
+<!-- =========================
+     LANGUAGE
+========================= -->
 
 <div class="language-switcher">
-    <button type="button" id="ru" class="active">RU</button>
-    <button type="button" id="kz">ҚАЗ</button>
+
+    <button
+        type="button"
+        id="ru"
+        class="active">
+        RU
+    </button>
+
+    <button
+        type="button"
+        id="kz">
+        ҚАЗ
+    </button>
+
 </div>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-<h1 id="mainTitle">
-    НАШ САУНДТРЕК
-</h1>
+<h1>OUR SOUNDTRACK</h1>
 
-<div class="subtitle" id="subtitle">
-    ПЯТЬ ПЕСЕН · ПЯТЬ ВОСПОМИНАНИЙ
+<div
+    class="subtitle"
+    id="subtitle">
+
+    FIVE SONGS · FIVE MEMORIES
+
 </div>
 
-<p class="intro" id="intro">
+<p
+    class="intro"
+    id="intro">
+
     Пять песен, которые стали частью нашей истории.
+
 </p>
 
 
-<!-- PHOTO COVER -->
+<!-- =========================
+     PHOTO COVER
+========================= -->
 
 <section class="photo-cover">
 
     <div class="cover-title">
 
-        <h2 id="coverTitle">
-            НАША ИСТОРИЯ
-        </h2>
+        <h2>OUR STORY</h2>
 
-        <p id="coverSubtitle">
-            В КАЖДОЙ НОТЕ · В КАЖДОМ ВОСПОМИНАНИИ
+        <p>
+            IN EVERY NOTE · IN EVERY MEMORY
         </p>
 
     </div>
@@ -638,7 +940,9 @@ audio{
 
         <div class="tape"></div>
 
-        <img src="photo1.jpg" alt="Наше воспоминание">
+        <img
+            src="photo1.jpg"
+            alt="Memory 1">
 
     </div>
 
@@ -647,7 +951,9 @@ audio{
 
         <div class="tape"></div>
 
-        <img src="photo2.JPG" alt="Наше воспоминание">
+        <img
+            src="photo2.JPG"
+            alt="Memory 2">
 
     </div>
 
@@ -656,7 +962,9 @@ audio{
 
         <div class="tape"></div>
 
-        <img src="photo3.jpeg" alt="Наше воспоминание">
+        <img
+            src="photo3.jpeg"
+            alt="Memory 3">
 
     </div>
 
@@ -665,7 +973,9 @@ audio{
 
         <div class="tape"></div>
 
-        <img src="photo4.jpeg" alt="Наше воспоминание">
+        <img
+            src="photo4.jpeg"
+            alt="Memory 4">
 
     </div>
 
@@ -673,7 +983,9 @@ audio{
     <div class="cover-note">
 
         <p id="coverText">
+
             Спасибо, что являешься частью моей истории.
+
         </p>
 
         <span class="cover-heart">
@@ -690,7 +1002,9 @@ audio{
 </div>
 
 
-<!-- SONG 01 -->
+<!-- =====================================================
+     SONG 01
+===================================================== -->
 
 <section class="song">
 
@@ -706,6 +1020,7 @@ audio{
 
     </div>
 
+
     <div class="artist">
         ANDRO
     </div>
@@ -717,10 +1032,11 @@ audio{
 
             <strong>Наша первая песня.</strong>
 
-            С самого начала она стала для нас больше, чем просто песня —
-            нашей маленькой историей. В ней есть ностальгия по тому,
-            как мы познакомились три года назад и всё ещё вместе,
-            несмотря ни на что.
+            С самого начала она стала для нас больше,
+            чем просто песня — нашей маленькой историей.
+            В ней есть ностальгия по тому,
+            как мы познакомились три года назад
+            и всё ещё вместе, несмотря ни на что.
 
         </p>
 
@@ -728,11 +1044,13 @@ audio{
         <p class="text">
 
             Особенно помню тот вечер на 11-м микрорайоне:
+            мы сидели у тебя дома на полу, кушали
+            и включили эту песню.
 
-            мы сидели у тебя дома на полу, кушали и включили эту песню.
+            А когда мы почти хотели разойтись,
+            ты снова включил её и сказал:
 
-            А когда мы почти хотели разойтись, ты снова включил её
-            и сказал: «Это наша песня».
+            «Это наша песня».
 
             Мне было очень приятно,
             что ты её помнишь.
@@ -742,8 +1060,11 @@ audio{
 
         <p class="text">
 
-            Она даёт мне чувство, что можно идти дальше,
-            не сдаваться, любить сильнее и продолжать нашу историю.
+            Она даёт мне чувство,
+            что можно идти дальше,
+            не сдаваться,
+            любить сильнее
+            и продолжать нашу историю.
 
         </p>
 
@@ -756,21 +1077,27 @@ audio{
 
             <strong>Біздің алғашқы әніміз.</strong>
 
-            Басында-ақ бұл ән біз үшін жай ғана ән емес,
+            Басында-ақ бұл ән біз үшін
+            жай ғана ән емес,
             өзіміздің кішкентай тарихымызға айналды.
 
-            Үш жыл бұрын танысқанымызды және қандай жағдай болса да
-            әлі бірге екенімізді еске түсіретін ерекше сағыныш бар.
+            Үш жыл бұрын танысқанымызды
+            және қандай жағдай болса да
+            әлі бірге екенімізді еске түсіретін
+            ерекше сағыныш бар.
 
         </p>
 
 
         <p class="text">
 
-            Әсіресе 11-шағынауданда сенің үйіңде еденде отырып,
-            тамақтанып, осы әнді қосқан кеш есімде.
+            Әсіресе 11-шағынауданда
+            сенің үйіңде еденде отырып,
+            тамақтанып,
+            осы әнді қосқан кеш есімде.
 
-            Ал айырылысқымыз келген кезде сен осы әнді қайта қосып,
+            Ал айырылысқымыз келген кезде
+            сен осы әнді қайта қосып,
 
             «Бұл — біздің әніміз»
 
@@ -782,20 +1109,28 @@ audio{
         <p class="text">
 
             Бұл ән маған әрі қарай бірге жүруге,
-            берілмеуге, бір-бірімізді қаттырақ сүюге
-            және тарихымызды жалғастыруға күш береді.
+            берілмеуге,
+            бір-бірімізді қаттырақ сүюге
+            және тарихымызды жалғастыруға
+            күш береді.
 
         </p>
 
     </div>
 
 
-    <audio controls preload="none" src="song1.mp3"></audio>
+    <audio
+        controls
+        preload="none"
+        src="song1.mp3">
+    </audio>
 
 </section>
 
 
-<!-- SONG 02 -->
+<!-- =====================================================
+     SONG 02
+===================================================== -->
 
 <section class="song">
 
@@ -811,6 +1146,7 @@ audio{
 
     </div>
 
+
     <div class="artist">
         АЗИЯ — ТОБЫ
     </div>
@@ -820,13 +1156,16 @@ audio{
 
         <p class="text">
 
-            Эта песня появилась в нашей истории во время расставания.
+            Эта песня появилась в нашей истории
+            во время расставания.
 
             Я узнала её через тебя —
             через твои ноты и твой голос.
 
-            Тогда, слушая её, я часто вспоминала тебя
-            и то состояние, в котором находилась.
+            Тогда, слушая её,
+            я часто вспоминала тебя
+            и то состояние,
+            в котором находилась.
 
         </p>
 
@@ -853,7 +1192,9 @@ audio{
 
         <p class="text">
 
-            Наверное, именно это —
+            Наверное,
+            именно это —
+
             <strong>«екеуміз ғана»</strong>.
 
         </p>
@@ -865,14 +1206,16 @@ audio{
 
         <p class="text">
 
-            Бұл ән біздің тарихымызда айырылысқан кезімізде пайда болды.
+            Бұл ән біздің тарихымызда
+            айырылысқан кезімізде пайда болды.
 
             Мен оны сенен —
-            сенің ноталарыңнан және даусыңнан таныдым.
+            сенің ноталарыңнан
+            және даусыңнан таныдым.
 
             Сол кезде бұл әнді тыңдаған сайын
-            сені және өзімнің сол кездегі көңіл-күйімді
-            еске алатынмын.
+            сені және өзімнің сол кездегі
+            көңіл-күйімді еске алатынмын.
 
         </p>
 
@@ -899,7 +1242,9 @@ audio{
 
         <p class="text">
 
-            Мүмкін, дәл осы —
+            Мүмкін,
+            дәл осы —
+
             <strong>«екеуміз ғана»</strong>.
 
         </p>
@@ -907,12 +1252,18 @@ audio{
     </div>
 
 
-    <audio controls preload="none" src="song2.mp3"></audio>
+    <audio
+        controls
+        preload="none"
+        src="song2.mp3">
+    </audio>
 
 </section>
 
 
-<!-- SONG 03 -->
+<!-- =====================================================
+     SONG 03
+===================================================== -->
 
 <section class="song">
 
@@ -928,6 +1279,7 @@ audio{
 
     </div>
 
+
     <div class="artist">
         RAUF & FAIK
     </div>
@@ -937,12 +1289,14 @@ audio{
 
         <p class="text">
 
-            Эта песня больше всего связана с периодом,
-            когда мы были на расстоянии друг от друга
+            Эта песня больше всего связана
+            с периодом, когда мы были
+            на расстоянии друг от друга
             и переживали расставание.
 
-            Её текст возвращал меня к тому,
-            какими счастливыми мы были раньше:
+            Её текст возвращал меня
+            к тому, какими счастливыми
+            мы были раньше:
 
             как были рядом,
             держались за руки
@@ -953,12 +1307,13 @@ audio{
 
         <p class="text">
 
-            Поэтому сначала в ней было много грусти
-            и воспоминаний.
+            Поэтому сначала в ней было
+            много грусти и воспоминаний.
 
             Я добавила её ещё и потому,
             что именно эту песню ты назвал,
-            когда я попросила тебя выбрать свои пять песен.
+            когда я попросила тебя
+            выбрать свои пять песен.
 
         </p>
 
@@ -970,16 +1325,16 @@ audio{
         <p class="text">
 
             Бұл ән біз бір-бірімізден алыстап,
-            айырылысуды бастан өткерген кезімізбен
-            ерекше байланысты.
+            айырылысуды бастан өткерген
+            кезімізбен ерекше байланысты.
 
             Оның мәтіні бұрын қаншалықты
             бақытты болғанымызды —
 
             бірге жүргенімізді,
             қол ұстасқанымызды
-            және жай ғана бірге уақыт өткізгенімізді
-            еске түсіреді.
+            және жай ғана бірге
+            уақыт өткізгенімізді еске түсіреді.
 
         </p>
 
@@ -987,10 +1342,12 @@ audio{
         <p class="text">
 
             Сондықтан бастапқыда бұл ән
-            мен үшін мұң мен естеліктерге толы болды.
+            мен үшін мұң мен естеліктерге
+            толы болды.
 
-            Оны тізімге сенен өзіңе ұнайтын бес әнді
-            сұрағанымда дәл осы әнді атағаның
+            Оны тізімге сенен өзіңе ұнайтын
+            бес әнді сұрағанымда
+            дәл осы әнді атағаның
             үшін де қостым.
 
         </p>
@@ -998,12 +1355,18 @@ audio{
     </div>
 
 
-    <audio controls preload="none" src="song3.mp3"></audio>
+    <audio
+        controls
+        preload="none"
+        src="song3.mp3">
+    </audio>
 
 </section>
 
 
-<!-- SONG 04 -->
+<!-- =====================================================
+     SONG 04
+===================================================== -->
 
 <section class="song">
 
@@ -1019,6 +1382,7 @@ audio{
 
     </div>
 
+
     <div class="artist">
         АЙҚЫН ТӨЛЕПБЕРГЕН
     </div>
@@ -1028,15 +1392,21 @@ audio{
 
         <p class="text">
 
-            Эти строки я воспринимаю как слова от тебя —
+            Эти строки я воспринимаю
+            как слова от тебя —
 
-            как то, что мне хотелось бы чувствовать
-            и слышать от любимого человека.
+            как то, что мне хотелось бы
+            чувствовать и слышать
+            от любимого человека.
 
-            Чтобы человек рядом умел любить сильнее,
-            был правильным, ценил того, кто находится рядом,
+            Чтобы человек рядом
+            умел любить сильнее,
+            был правильным,
+            ценил того,
+            кто находится рядом,
 
-            и не забывал показывать свои чувства.
+            и не забывал
+            показывать свои чувства.
 
         </p>
 
@@ -1057,15 +1427,19 @@ audio{
 
         <p class="text">
 
-            Бұл жолдарды мен сенің сөзің сияқты қабылдаймын —
+            Бұл жолдарды мен сенің сөзің
+            сияқты қабылдаймын —
 
-            сүйген адамымнан сезінгім және естігім келетін
+            сүйген адамымнан сезінгім
+            және естігім келетін
             сөздер сияқты.
 
             Жаныңдағы адам шын сүйе білсе,
-            дұрыс адам болса, қасындағы жанды бағаласа
+            дұрыс адам болса,
+            қасындағы жанды бағаласа
 
-            және өз сезімін көрсетуді ұмытпаса екен деймін.
+            және өз сезімін көрсетуді
+            ұмытпаса екен деймін.
 
         </p>
 
@@ -1082,12 +1456,18 @@ audio{
     </div>
 
 
-    <audio controls preload="none" src="song4.mp3"></audio>
+    <audio
+        controls
+        preload="none"
+        src="song4.mp3">
+    </audio>
 
 </section>
 
 
-<!-- SONG 05 -->
+<!-- =====================================================
+     SONG 05
+===================================================== -->
 
 <section class="song">
 
@@ -1103,6 +1483,7 @@ audio{
 
     </div>
 
+
     <div class="artist">
         МОТ FEAT. БЬЯНКА
     </div>
@@ -1116,11 +1497,15 @@ audio{
                 Последняя песня — как завершение.
             </strong>
 
-            Она здесь потому, что в конце этой истории
-            мы нашли абсолютно всё друг в друге.
+            Она здесь потому,
+            что в конце этой истории
+            мы нашли абсолютно всё
+            друг в друге.
 
-            После всего, через что мы прошли,
-            она ощущается как наш маленький happy end —
+            После всего,
+            через что мы прошли,
+            она ощущается
+            как наш маленький happy end —
 
             не идеальный,
             но настоящий.
@@ -1135,16 +1520,20 @@ audio{
         <p class="text">
 
             <strong>
-                Соңғы ән — біздің тарихымыздың
+                Соңғы ән —
+                біздің тарихымыздың
                 аяқталуы сияқты.
             </strong>
 
             Бұл әнді соңына қойғаным —
-            осы тарихтың соңында екеуміз
-            бір-бірімізден бәрін тапқанымыз үшін.
+            осы тарихтың соңында
+            екеуміз бір-бірімізден
+            бәрін тапқанымыз үшін.
 
-            Біздің басымыздан өткен барлық нәрседен кейін
-            бұл ән кішкентай happy end сияқты сезіледі —
+            Біздің басымыздан өткен
+            барлық нәрседен кейін
+            бұл ән кішкентай happy end
+            сияқты сезіледі —
 
             мінсіз емес,
             бірақ шынайы.
@@ -1154,34 +1543,63 @@ audio{
     </div>
 
 
-    <audio controls preload="none" src="song5.mp3"></audio>
+    <audio
+        controls
+        preload="none"
+        src="song5.mp3">
+    </audio>
 
 </section>
 
 
-<!-- QUESTION -->
+<!-- =====================================================
+     NEW INTERACTIVE BLOCK
+===================================================== -->
 
-<section class="question-section">
-
-    <div class="question-label" id="questionLabel">
-        МАЛЕНЬКИЙ ВОПРОС
-    </div>
+<section class="memory-section">
 
 
-    <h2 class="question-title" id="questionTitle">
-        Какая из этих песен больше всего ассоциируется
-        у тебя с нашими отношениями?
+    <h2
+        class="memory-heading"
+        id="memoryHeading">
+
+        А теперь — немного от тебя
+
     </h2>
 
 
-    <p class="question-subtitle" id="questionSubtitle">
-        Выбери ту, которая первой приходит тебе в голову.
+    <div
+        class="memory-subheading"
+        id="memorySubheading">
+
+        ЕЩЁ ОДНА МАЛЕНЬКАЯ ЧАСТЬ НАШЕЙ ИСТОРИИ
+
+    </div>
+
+
+    <!-- QUESTION 1 -->
+
+    <p
+        class="memory-question"
+        id="songQuestion">
+
+        Какая из этих песен больше всего
+        ассоциируется у тебя с нашими отношениями?
+
     </p>
 
 
-    <div class="song-choice">
+    <div class="song-choices">
 
-        <button type="button" data-song="1">
+
+        <button
+            type="button"
+            class="song-choice"
+            data-song="1">
+
+            <span class="choice-number">
+                01
+            </span>
 
             <span class="choice-title">
                 «Что такое любовь»
@@ -1194,7 +1612,14 @@ audio{
         </button>
 
 
-        <button type="button" data-song="2">
+        <button
+            type="button"
+            class="song-choice"
+            data-song="2">
+
+            <span class="choice-number">
+                02
+            </span>
 
             <span class="choice-title">
                 «Ғажайып күй»
@@ -1207,7 +1632,14 @@ audio{
         </button>
 
 
-        <button type="button" data-song="3">
+        <button
+            type="button"
+            class="song-choice"
+            data-song="3">
+
+            <span class="choice-number">
+                03
+            </span>
 
             <span class="choice-title">
                 «Вечера»
@@ -1220,7 +1652,14 @@ audio{
         </button>
 
 
-        <button type="button" data-song="4">
+        <button
+            type="button"
+            class="song-choice"
+            data-song="4">
+
+            <span class="choice-number">
+                04
+            </span>
 
             <span class="choice-title">
                 «Сүйгенім»
@@ -1233,7 +1672,14 @@ audio{
         </button>
 
 
-        <button type="button" data-song="5">
+        <button
+            type="button"
+            class="song-choice"
+            data-song="5">
+
+            <span class="choice-number">
+                05
+            </span>
 
             <span class="choice-title">
                 «Абсолютно всё»
@@ -1248,13 +1694,156 @@ audio{
     </div>
 
 
-    <!-- ANSWER -->
+    <!-- SONG RESULT -->
 
-    <div class="answer" id="answer">
+    <div
+        class="choice-result"
+        id="choiceResult">
 
-        <div class="answer-song" id="answerSong"></div>
+        <div
+            class="choice-result-title"
+            id="choiceResultTitle">
+        </div>
 
-        <p class="answer-text" id="answerText"></p>
+        <p
+            class="choice-result-text"
+            id="choiceResultText">
+        </p>
+
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <p
+        class="feeling-question"
+        id="feelingQuestion">
+
+        Что ты чувствуешь,
+        когда слышишь наши песни?
+
+    </p>
+
+
+    <div class="feeling-choices">
+
+
+        <button
+            type="button"
+            class="feeling-button"
+            data-feeling="love">
+
+            ♡ Любовь
+
+        </button>
+
+
+        <button
+            type="button"
+            class="feeling-button"
+            data-feeling="warmth">
+
+            ♡ Тепло
+
+        </button>
+
+
+        <button
+            type="button"
+            class="feeling-button"
+            data-feeling="nostalgia">
+
+            ♡ Ностальгию
+
+        </button>
+
+
+        <button
+            type="button"
+            class="feeling-button"
+            data-feeling="happiness">
+
+            ♡ Счастье
+
+        </button>
+
+
+        <button
+            type="button"
+            class="feeling-button"
+            data-feeling="everything">
+
+            ♡ Всё сразу
+
+        </button>
+
+    </div>
+
+
+    <!-- FEELING RESULT -->
+
+    <div
+        class="feeling-result"
+        id="feelingResult">
+    </div>
+
+
+    <!-- PERSONAL MESSAGE -->
+
+    <h3
+        class="message-title"
+        id="messageTitle">
+
+        Напиши что-нибудь от себя
+
+    </h3>
+
+
+    <p
+        class="message-subtitle"
+        id="messageSubtitle">
+
+        То, что хочется оставить здесь.
+
+    </p>
+
+
+    <div class="memory-form">
+
+
+        <textarea
+            id="memoryInput"
+            class="memory-input"
+            placeholder="Напиши здесь то, что хочется сказать..."
+        ></textarea>
+
+
+        <button
+            type="button"
+            class="memory-submit"
+            id="memorySubmit">
+
+            ОСТАВИТЬ ВОСПОМИНАНИЕ ♡
+
+        </button>
+
+    </div>
+
+
+    <!-- SAVED COMMENTS -->
+
+    <h3
+        class="saved-title"
+        id="savedTitle">
+
+        Твои воспоминания
+
+    </h3>
+
+
+    <div
+        class="memories-list"
+        id="memoriesList">
 
     </div>
 
@@ -1268,8 +1857,12 @@ audio{
 </div>
 
 
-<div class="footer" id="footer">
-    ПЯТЬ ПЕСЕН · ПЯТЬ ВОСПОМИНАНИЙ
+<div
+    class="footer"
+    id="footer">
+
+    FIVE SONGS · FIVE MEMORIES
+
 </div>
 
 
@@ -1280,348 +1873,814 @@ audio{
 
 (function(){
 
-    const ruButton =
-        document.getElementById("ru");
 
-    const kzButton =
-        document.getElementById("kz");
+/* =====================================================
+   LANGUAGE
+===================================================== */
 
+const ruButton =
+    document.getElementById("ru");
 
-    const ruBlocks =
-        document.querySelectorAll(".ru-content");
+const kzButton =
+    document.getElementById("kz");
 
-    const kzBlocks =
-        document.querySelectorAll(".kz-content");
+const ruBlocks =
+    document.querySelectorAll(".ru-content");
 
+const kzBlocks =
+    document.querySelectorAll(".kz-content");
 
-    const mainTitle =
-        document.getElementById("mainTitle");
+const subtitle =
+    document.getElementById("subtitle");
 
-    const subtitle =
-        document.getElementById("subtitle");
+const intro =
+    document.getElementById("intro");
 
-    const intro =
-        document.getElementById("intro");
+const footer =
+    document.getElementById("footer");
 
-    const coverTitle =
-        document.getElementById("coverTitle");
-
-    const coverSubtitle =
-        document.getElementById("coverSubtitle");
-
-    const coverText =
-        document.getElementById("coverText");
-
-    const footer =
-        document.getElementById("footer");
+const coverText =
+    document.getElementById("coverText");
 
 
-    const questionLabel =
-        document.getElementById("questionLabel");
+/* NEW TEXT ELEMENTS */
 
-    const questionTitle =
-        document.getElementById("questionTitle");
+const memoryHeading =
+    document.getElementById("memoryHeading");
 
-    const questionSubtitle =
-        document.getElementById("questionSubtitle");
+const memorySubheading =
+    document.getElementById("memorySubheading");
 
-    const answer =
-        document.getElementById("answer");
+const songQuestion =
+    document.getElementById("songQuestion");
 
-    const answerSong =
-        document.getElementById("answerSong");
+const feelingQuestion =
+    document.getElementById("feelingQuestion");
 
-    const answerText =
-        document.getElementById("answerText");
+const messageTitle =
+    document.getElementById("messageTitle");
+
+const messageSubtitle =
+    document.getElementById("messageSubtitle");
+
+const savedTitle =
+    document.getElementById("savedTitle");
+
+const memoryInput =
+    document.getElementById("memoryInput");
+
+const memorySubmit =
+    document.getElementById("memorySubmit");
 
 
-    let currentLanguage = "ru";
+let currentLanguage = "ru";
 
 
-    /* LANGUAGE */
+function changeLanguage(lang){
 
-    function changeLanguage(lang){
+    const isKz =
+        lang === "kz";
 
-        currentLanguage = lang;
+    currentLanguage =
+        lang;
 
-        const isKz = lang === "kz";
+
+    ruButton.classList.toggle(
+        "active",
+        !isKz
+    );
+
+    kzButton.classList.toggle(
+        "active",
+        isKz
+    );
 
 
-        ruButton.classList.toggle(
-            "active",
-            !isKz
-        );
+    ruBlocks.forEach(function(el){
 
-        kzButton.classList.toggle(
-            "active",
+        el.classList.toggle(
+            "hidden",
             isKz
         );
 
+    });
 
-        ruBlocks.forEach(function(el){
 
-            el.classList.toggle(
-                "hidden",
-                isKz
-            );
+    kzBlocks.forEach(function(el){
+
+        el.classList.toggle(
+            "hidden",
+            !isKz
+        );
+
+    });
+
+
+    if(isKz){
+
+        subtitle.textContent =
+            "БЕС ӘН · БЕС ЕСТЕЛІК";
+
+        intro.textContent =
+            "Біздің тарихымыздың бір бөлігіне айналған бес ән.";
+
+        footer.textContent =
+            "БЕС ӘН · БЕС ЕСТЕЛІК";
+
+        coverText.textContent =
+            "Менің тарихымның бір бөлігі болғаның үшін рақмет.";
+
+
+        memoryHeading.textContent =
+            "Ал енді — сенен аздап";
+
+        memorySubheading.textContent =
+            "БІЗДІҢ ТАРИХЫМЫЗДЫҢ ТАҒЫ БІР КІШКЕНТАЙ БӨЛІГІ";
+
+        songQuestion.textContent =
+            "Осы әндердің қайсысы біздің қарым-қатынасымызды көбірек еске түсіреді?";
+
+        feelingQuestion.textContent =
+            "Біздің әндерімізді естігенде не сезінесің?";
+
+        messageTitle.textContent =
+            "Өзіңнен бір нәрсе жаз";
+
+        messageSubtitle.textContent =
+            "Осы жерде қалдырғың келетін сөздер.";
+
+        memoryInput.placeholder =
+            "Осы жерге айтқың келген нәрсені жаз...";
+
+        memorySubmit.textContent =
+            "ЕСТЕЛІК ҚАЛДЫРУ ♡";
+
+        savedTitle.textContent =
+            "Сенің естеліктерің";
+
+
+        document.querySelectorAll(".song-choice")
+        .forEach(function(button,index){
+
+            const titles = [
+                "«Что такое любовь»",
+                "«Ғажайып күй»",
+                "«Вечера»",
+                "«Сүйгенім»",
+                "«Абсолютно всё»"
+            ];
+
+            button.querySelector(".choice-title")
+                .textContent = titles[index];
 
         });
 
 
-        kzBlocks.forEach(function(el){
-
-            el.classList.toggle(
-                "hidden",
-                !isKz
-            );
-
-        });
-
-
-        if(isKz){
-
-            mainTitle.textContent =
-                "БІЗДІҢ САУНДТРЕГІМІЗ";
-
-            subtitle.textContent =
-                "БЕС ӘН · БЕС ЕСТЕЛІК";
-
-            intro.textContent =
-                "Біздің тарихымыздың бір бөлігіне айналған бес ән.";
-
-            coverTitle.textContent =
-                "БІЗДІҢ ТАРИХЫМЫЗ";
-
-            coverSubtitle.textContent =
-                "ӘР НОТАДА · ӘР ЕСТЕЛІКТЕ";
-
-            coverText.textContent =
-                "Менің тарихымның бір бөлігі болғаның үшін рақмет.";
-
-            questionLabel.textContent =
-                "КІШКЕНЕ СҰРАҚ";
-
-            questionTitle.textContent =
-                "Осы әндердің қайсысы саған біздің қарым-қатынасымызды көбірек еске түсіреді?";
-
-            questionSubtitle.textContent =
-                "Ойыңа бірінші келген әнді таңда.";
-
-            footer.textContent =
-                "БЕС ӘН · БЕС ЕСТЕЛІК";
-
-        }else{
-
-            mainTitle.textContent =
-                "НАШ САУНДТРЕК";
-
-            subtitle.textContent =
-                "ПЯТЬ ПЕСЕН · ПЯТЬ ВОСПОМИНАНИЙ";
-
-            intro.textContent =
-                "Пять песен, которые стали частью нашей истории.";
-
-            coverTitle.textContent =
-                "НАША ИСТОРИЯ";
-
-            coverSubtitle.textContent =
-                "В КАЖДОЙ НОТЕ · В КАЖДОМ ВОСПОМИНАНИИ";
-
-            coverText.textContent =
-                "Спасибо, что являешься частью моей истории.";
-
-            questionLabel.textContent =
-                "МАЛЕНЬКИЙ ВОПРОС";
-
-            questionTitle.textContent =
-                "Какая из этих песен больше всего ассоциируется у тебя с нашими отношениями?";
-
-            questionSubtitle.textContent =
-                "Выбери ту, которая первой приходит тебе в голову.";
-
-            footer.textContent =
-                "ПЯТЬ ПЕСЕН · ПЯТЬ ВОСПОМИНАНИЙ";
-
-        }
-
-
-        /* Если ответ уже открыт — обновляем его язык */
-
-        const selected =
-            document.querySelector(".song-choice button.selected");
-
-        if(selected){
-
-            showAnswer(
-                selected.dataset.song
-            );
-
-        }
-
-    }
-
-
-    ruButton.addEventListener(
-        "click",
-        function(){
-            changeLanguage("ru");
-        }
-    );
-
-
-    kzButton.addEventListener(
-        "click",
-        function(){
-            changeLanguage("kz");
-        }
-    );
-
-
-    /* SONG ANSWERS */
-
-    const answersRU = {
-
-        1:{
-            title:"«Что такое любовь» — ANDRO",
-            text:"Похоже, именно эта песня для тебя больше всего связана с нами. В ней есть то самое чувство начала нашей истории — когда всё только появлялось и становилось своим."
-        },
-
-        2:{
-            title:"«Ғажайып күй» — АЗИЯ — ТОБЫ",
-            text:"Похоже, эта песня напоминает тебе о том особенном мире, который существует только между двумя людьми. О том, что иногда понимаете друг друга только вы двое."
-        },
-
-        3:{
-            title:"«Вечера» — RAUF & FAIK",
-            text:"Похоже, эта песня возвращает тебя к нашим воспоминаниям. К тем моментам, когда мы просто были рядом и нам было хорошо вместе."
-        },
-
-        4:{
-            title:"«Сүйгенім» — АЙҚЫН ТӨЛЕПБЕРГЕН",
-            text:"Похоже, в этой песне ты слышишь то, что хочется чувствовать в отношениях: любовь, заботу, близость и желание быть рядом."
-        },
-
-        5:{
-            title:"«Абсолютно всё» — МОТ FEAT. БЬЯНКА",
-            text:"Похоже, для тебя эта песня про нас сегодня. Про всё, через что мы прошли, и про то, что несмотря ни на что мы всё равно нашли друг друга."
-        }
-
-    };
-
-
-    const answersKZ = {
-
-        1:{
-            title:"«Что такое любовь» — ANDRO",
-            text:"Бұл ән саған біздің тарихымыздың басталуын көбірек еске түсіретін сияқты. Бәрі енді ғана басталып, біртіндеп өзімізге жақын болған кездегі ерекше сезім бар."
-        },
-
-        2:{
-            title:"«Ғажайып күй» — АЗИЯ — ТОБЫ",
-            text:"Бұл ән саған тек екеуіңе ғана түсінікті ерекше әлемді еске түсіретін сияқты. Кейбір сезімдерді тек екеуің ғана түсінетіндей."
-        },
-
-        3:{
-            title:"«Вечера» — RAUF & FAIK",
-            text:"Бұл ән саған бірге өткізген естеліктерімізді еске түсіретін сияқты. Бірге болып, жай ғана қасымызда жүргеніміздің өзі бақыт болған кездерді."
-        },
-
-        4:{
-            title:"«Сүйгенім» — АЙҚЫН ТӨЛЕПБЕРГЕН",
-            text:"Бұл әннен сен қарым-қатынаста сезінгің келетін нәрселерді еститін сияқтысың: махаббатты, қамқорлықты, жақындықты және бірге болуға деген қалауды."
-        },
-
-        5:{
-            title:"«Абсолютно всё» — МОТ FEAT. БЬЯНКА",
-            text:"Бұл ән саған біздің бүгінгі тарихымызды еске түсіретін сияқты. Бәріміз бастан өткерген нәрселерден кейін де бір-бірімізді қайта тапқанымыз туралы."
-        }
-
-    };
-
-
-    function showAnswer(number){
-
-        const data =
-            currentLanguage === "kz"
-            ? answersKZ[number]
-            : answersRU[number];
-
-
-        answerSong.textContent =
-            data.title;
-
-        answerText.textContent =
-            data.text;
-
-        answer.classList.add("show");
-
-    }
-
-
-    document
-        .querySelectorAll(".song-choice button")
+        document.querySelectorAll(".feeling-button")
         .forEach(function(button){
 
-            button.addEventListener(
-                "click",
-                function(){
+            const feeling =
+                button.dataset.feeling;
 
-                    document
-                        .querySelectorAll(".song-choice button")
-                        .forEach(function(btn){
+            const texts = {
 
-                            btn.classList.remove(
-                                "selected"
-                            );
+                love:"♡ Махаббат",
 
-                        });
+                warmth:"♡ Жылулық",
 
+                nostalgia:"♡ Сағыныш",
 
-                    button.classList.add(
-                        "selected"
-                    );
+                happiness:"♡ Бақыт",
 
+                everything:"♡ Барлығы бірге"
 
-                    showAnswer(
-                        button.dataset.song
-                    );
+            };
 
-                }
-            );
+            button.textContent =
+                texts[feeling];
 
         });
 
 
-    /* AUDIO */
+    }else{
 
-    document
-        .querySelectorAll("audio")
-        .forEach(function(player){
+        subtitle.textContent =
+            "FIVE SONGS · FIVE MEMORIES";
 
-            player.addEventListener(
-                "play",
-                function(){
+        intro.textContent =
+            "Пять песен, которые стали частью нашей истории.";
 
-                    document
-                        .querySelectorAll("audio")
-                        .forEach(function(other){
+        footer.textContent =
+            "FIVE SONGS · FIVE MEMORIES";
 
-                            if(other !== player){
-                                other.pause();
-                            }
+        coverText.textContent =
+            "Спасибо, что являешься частью моей истории.";
 
-                        });
 
-                }
-            );
+        memoryHeading.textContent =
+            "А теперь — немного от тебя";
+
+        memorySubheading.textContent =
+            "ЕЩЁ ОДНА МАЛЕНЬКАЯ ЧАСТЬ НАШЕЙ ИСТОРИИ";
+
+        songQuestion.textContent =
+            "Какая из этих песен больше всего ассоциируется у тебя с нашими отношениями?";
+
+        feelingQuestion.textContent =
+            "Что ты чувствуешь, когда слышишь наши песни?";
+
+        messageTitle.textContent =
+            "Напиши что-нибудь от себя";
+
+        messageSubtitle.textContent =
+            "То, что хочется оставить здесь.";
+
+        memoryInput.placeholder =
+            "Напиши здесь то, что хочется сказать...";
+
+        memorySubmit.textContent =
+            "ОСТАВИТЬ ВОСПОМИНАНИЕ ♡";
+
+        savedTitle.textContent =
+            "Твои воспоминания";
+
+
+        const feelingTexts = {
+
+            love:"♡ Любовь",
+
+            warmth:"♡ Тепло",
+
+            nostalgia:"♡ Ностальгию",
+
+            happiness:"♡ Счастье",
+
+            everything:"♡ Всё сразу"
+
+        };
+
+
+        document.querySelectorAll(".feeling-button")
+        .forEach(function(button){
+
+            button.textContent =
+                feelingTexts[
+                    button.dataset.feeling
+                ];
 
         });
+
+    }
+
+
+    renderMemories();
+
+}
+
+
+ruButton.addEventListener(
+    "click",
+    function(){
+        changeLanguage("ru");
+    }
+);
+
+
+kzButton.addEventListener(
+    "click",
+    function(){
+        changeLanguage("kz");
+    }
+);
+
+
+/* =====================================================
+   SONG CHOICES
+===================================================== */
+
+const songButtons =
+    document.querySelectorAll(".song-choice");
+
+const choiceResult =
+    document.getElementById("choiceResult");
+
+const choiceResultTitle =
+    document.getElementById("choiceResultTitle");
+
+const choiceResultText =
+    document.getElementById("choiceResultText");
+
+
+const songData = {
+
+    1:{
+
+        ruTitle:"«Что такое любовь» — ANDRO",
+
+        kzTitle:"«Что такое любовь» — ANDRO",
+
+        ruText:
+        "Наверное, эта песня для тебя про самое начало — про чувства, которые стали частью нашей истории и с которых всё началось.",
+
+        kzText:
+        "Мүмкін, бұл ән сен үшін біздің тарихымыздың басталуын — алғашқы сезімдерімізді және бәрі басталған сәттерді білдіретін шығар."
+
+    },
+
+
+    2:{
+
+        ruTitle:"«Ғажайып күй» — АЗИЯ — ТОБЫ",
+
+        kzTitle:"«Ғажайып күй» — АЗИЯ — ТОБЫ",
+
+        ruText:
+        "Значит, в этой песне для тебя есть что-то очень личное. Что-то, что понимаем только мы двое.",
+
+        kzText:
+        "Демек, бұл әнде сен үшін өте ерекше, жеке бір нәрсе бар. Екеуміз ғана түсінетін сезім бар."
+
+    },
+
+
+    3:{
+
+        ruTitle:"«Вечера» — RAUF & FAIK",
+
+        kzTitle:"«Вечера» — RAUF & FAIK",
+
+        ruText:
+        "Значит, именно эта песня хранит для тебя воспоминания о времени, когда мы особенно сильно скучали друг по другу.",
+
+        kzText:
+        "Демек, дәл осы ән сен үшін бір-бірімізді қатты сағынған кездеріміздің естелігін сақтап тұр."
+
+    },
+
+
+    4:{
+
+        ruTitle:"«Сүйгенім» — АЙҚЫН ТӨЛЕПБЕРГЕН",
+
+        kzTitle:"«Сүйгенім» — АЙҚЫН ТӨЛЕПБЕРГЕН",
+
+        ruText:
+        "Возможно, ты слышишь в ней именно те слова и чувства, которые хочется сохранить между нами.",
+
+        kzText:
+        "Мүмкін, сен бұл әннен арамызда сақтағың келетін дәл сол сөздер мен сезімдерді еститін шығарсың."
+
+    },
+
+
+    5:{
+
+        ruTitle:"«Абсолютно всё» — МОТ feat. БЬЯНКА",
+
+        kzTitle:"«Абсолютно всё» — МОТ feat. БЬЯНКА",
+
+        ruText:
+        "Тогда, наверное, для тебя эта песня — про всё, что мы прошли, и про то, что несмотря ни на что мы всё равно нашли друг друга.",
+
+        kzText:
+        "Онда бұл ән сен үшін бірге өткен барлық жолымызды және қандай жағдай болса да бір-бірімізді қайта тапқанымызды білдіретін шығар."
+
+    }
+
+};
+
+
+songButtons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            songButtons.forEach(function(other){
+
+                other.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+            button.classList.add(
+                "selected"
+            );
+
+
+            const song =
+                songData[
+                    button.dataset.song
+                ];
+
+
+            if(currentLanguage === "kz"){
+
+                choiceResultTitle.textContent =
+                    "Сенің таңдауың — " +
+                    song.kzTitle;
+
+                choiceResultText.textContent =
+                    song.kzText;
+
+            }else{
+
+                choiceResultTitle.textContent =
+                    "Твой выбор — " +
+                    song.ruTitle;
+
+                choiceResultText.textContent =
+                    song.ruText;
+
+            }
+
+
+            choiceResult.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   FEELINGS
+===================================================== */
+
+const feelingButtons =
+    document.querySelectorAll(".feeling-button");
+
+const feelingResult =
+    document.getElementById("feelingResult");
+
+
+const feelingData = {
+
+    love:{
+
+        ru:
+        "Значит, в этих песнях для тебя осталось что-то настоящее. То, что словами иногда сказать намного сложнее.",
+
+        kz:
+        "Демек, бұл әндерде сен үшін шынайы бір сезім сақталған. Кейде оны сөзбен жеткізу әлдеқайда қиын."
+
+    },
+
+
+    warmth:{
+
+        ru:
+        "Тогда пусть каждая из этих песен всегда напоминает тебе о тёплых моментах, которые были только нашими.",
+
+        kz:
+        "Онда осы әндердің әрқайсысы тек екеумізге ғана тиесілі жылы сәттерді әрдайым еске салсын."
+
+    },
+
+
+    nostalgia:{
+
+        ru:
+        "Наверное, поэтому музыка и остаётся с нами — она умеет возвращать в моменты, которые уже невозможно повторить точно так же.",
+
+        kz:
+        "Мүмкін, музыка бізбен сондықтан қалады — ол қайта қайталанбайтын сәттерге бізді қайтара алады."
+
+    },
+
+
+    happiness:{
+
+        ru:
+        "Мне нравится думать, что эти песни могут напоминать не только о прошлом, но и о тех моментах, которые заставляют нас улыбаться.",
+
+        kz:
+        "Бұл әндер өткенді ғана емес, бізге күлкі сыйлайтын бақытты сәттерді де еске салатынын ойлау маған ұнайды."
+
+    },
+
+
+    everything:{
+
+        ru:
+        "Наверное, это и есть самое настоящее чувство — когда одна история может вместить любовь, тепло, грусть, ностальгию и счастье одновременно.",
+
+        kz:
+        "Мүмкін, ең шынайы сезім де осы шығар — бір тарихтың ішінде махаббат, жылулық, мұң, сағыныш пен бақыттың бәрі бірге болуы."
+
+    }
+
+};
+
+
+feelingButtons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            feelingButtons.forEach(function(other){
+
+                other.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+            button.classList.add(
+                "selected"
+            );
+
+
+            const feeling =
+                feelingData[
+                    button.dataset.feeling
+                ];
+
+
+            feelingResult.textContent =
+                currentLanguage === "kz"
+                ? feeling.kz
+                : feeling.ru;
+
+
+            feelingResult.classList.add(
+                "show"
+            );
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   LOCAL STORAGE MEMORIES
+===================================================== */
+
+const STORAGE_KEY =
+    "ourSoundtrackMemories";
+
+
+function getMemories(){
+
+    try{
+
+        const saved =
+            localStorage.getItem(
+                STORAGE_KEY
+            );
+
+        return saved
+            ? JSON.parse(saved)
+            : [];
+
+    }catch(error){
+
+        return [];
+
+    }
+
+}
+
+
+function saveMemories(memories){
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(memories)
+    );
+
+}
+
+
+function formatDate(date){
+
+    const day =
+        String(
+            date.getDate()
+        ).padStart(2,"0");
+
+    const month =
+        String(
+            date.getMonth()+1
+        ).padStart(2,"0");
+
+    const year =
+        date.getFullYear();
+
+
+    return day + "." + month + "." + year;
+
+}
+
+
+function renderMemories(){
+
+    const list =
+        document.getElementById(
+            "memoriesList"
+        );
+
+
+    const memories =
+        getMemories();
+
+
+    list.innerHTML = "";
+
+
+    if(memories.length === 0){
+
+        const empty =
+            document.createElement(
+                "div"
+            );
+
+        empty.className =
+            "empty-memories";
+
+
+        empty.textContent =
+            currentLanguage === "kz"
+            ? "Мұнда әзірге ешқандай естелік жоқ."
+            : "Здесь пока нет воспоминаний.";
+
+
+        list.appendChild(
+            empty
+        );
+
+        return;
+
+    }
+
+
+    memories.forEach(function(memory){
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+        card.className =
+            "memory-card";
+
+
+        const text =
+            document.createElement(
+                "p"
+            );
+
+        text.className =
+            "memory-card-text";
+
+
+        /*
+            textContent используется специально,
+            чтобы введённый текст не мог
+            превратиться в HTML-код.
+        */
+
+        text.textContent =
+            "«" + memory.text + "»";
+
+
+        const date =
+            document.createElement(
+                "div"
+            );
+
+        date.className =
+            "memory-card-date";
+
+        date.textContent =
+            memory.date;
+
+
+        card.appendChild(
+            text
+        );
+
+        card.appendChild(
+            date
+        );
+
+
+        list.appendChild(
+            card
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   ADD MEMORY
+===================================================== */
+
+memorySubmit.addEventListener(
+    "click",
+    function(){
+
+        const text =
+            memoryInput.value.trim();
+
+
+        if(!text){
+
+            memoryInput.focus();
+
+            return;
+
+        }
+
+
+        const memories =
+            getMemories();
+
+
+        memories.push({
+
+            text:text,
+
+            date:formatDate(
+                new Date()
+            )
+
+        });
+
+
+        saveMemories(
+            memories
+        );
+
+
+        memoryInput.value = "";
+
+
+        renderMemories();
+
+
+        document.getElementById(
+            "memoriesList"
+        ).scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"nearest"
+
+        });
+
+    }
+);
+
+
+/* =====================================================
+   ONLY ONE SONG AT A TIME
+===================================================== */
+
+document
+.querySelectorAll("audio")
+.forEach(function(player){
+
+    player.addEventListener(
+        "play",
+        function(){
+
+            document
+            .querySelectorAll("audio")
+            .forEach(function(other){
+
+                if(other !== player){
+
+                    other.pause();
+
+                }
+
+            });
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+renderMemories();
 
 
 })();
-
 </script>
 
 </body>
-</html></body>
-</html>
+</html></html>
