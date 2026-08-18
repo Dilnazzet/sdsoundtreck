@@ -2134,7 +2134,7 @@ async function renderMemories(){
         text.className = "memory-card-text";
 
         text.textContent =
-            "«" + memory.text + "»";
+            "«" + memory.text_at + "»";
 
 
         const date =
@@ -2203,7 +2203,7 @@ memorySubmit.addEventListener(
                 .from("memories")
                 .insert([
                     {
-                        text: text
+                        text_at: text
                     }
                 ])
                 .select();
