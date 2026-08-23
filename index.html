@@ -129,7 +129,7 @@ h1{
 
 .photo-cover{
     position:relative;
-    min-height:560px;
+    height:650px;
     margin:20px -10px 50px;
     padding:35px 20px;
     overflow:hidden;
@@ -168,9 +168,14 @@ h1{
     bottom:-100px;
 }
 
+
+/* =========================
+   COVER TITLE
+========================= */
+
 .cover-title{
     position:relative;
-    z-index:5;
+    z-index:8;
     text-align:center;
     margin:0 0 25px;
 }
@@ -189,11 +194,16 @@ h1{
     letter-spacing:3px;
 }
 
+
+/* =========================
+   PHOTOS
+========================= */
+
 .photo{
     position:absolute;
     z-index:3;
     background:#fff;
-    padding:9px 9px 30px;
+    padding:8px 8px 27px;
     box-shadow:0 12px 25px rgba(45,35,28,.20);
     transition:.3s ease;
 }
@@ -210,60 +220,104 @@ h1{
     z-index:10;
 }
 
+
+/* TOP LEFT */
+
 .photo1{
-    width:230px;
-    height:275px;
-    left:7%;
-    top:125px;
-    transform:rotate(-6deg);
+    width:175px;
+    height:215px;
+    left:5%;
+    top:105px;
+    transform:rotate(-7deg);
 }
 
+
+/* TOP RIGHT */
+
 .photo2{
-    width:190px;
-    height:235px;
-    right:7%;
-    top:120px;
+    width:165px;
+    height:205px;
+    right:5%;
+    top:105px;
     transform:rotate(7deg);
 }
 
+
+/* MIDDLE LEFT */
+
 .photo3{
-    width:190px;
-    height:235px;
-    left:17%;
-    bottom:32px;
+    width:160px;
+    height:200px;
+    left:3%;
+    top:330px;
     transform:rotate(5deg);
 }
 
+
+/* MIDDLE RIGHT */
+
 .photo4{
-    width:220px;
-    height:270px;
-    right:12%;
-    bottom:28px;
+    width:165px;
+    height:205px;
+    right:3%;
+    top:325px;
     transform:rotate(-6deg);
 }
+
+
+/* BOTTOM LEFT */
+
+.photo5{
+    width:155px;
+    height:195px;
+    left:17%;
+    bottom:12px;
+    transform:rotate(-5deg);
+}
+
+
+/* BOTTOM RIGHT — PLACE FOR PHOTO 6 */
+
+.photo6{
+    width:155px;
+    height:195px;
+    right:17%;
+    bottom:12px;
+    transform:rotate(6deg);
+}
+
+
+/* =========================
+   TAPE
+========================= */
 
 .tape{
     position:absolute;
     z-index:5;
-    width:70px;
-    height:24px;
+    width:60px;
+    height:21px;
     background:rgba(203,180,145,.70);
     left:50%;
     transform:translateX(-50%) rotate(-2deg);
-    top:-10px;
+    top:-9px;
 }
+
+
+/* =========================
+   CENTER NOTE
+========================= */
 
 .cover-note{
     position:absolute;
-    z-index:6;
+    z-index:20;
     left:50%;
     top:50%;
     transform:translate(-50%,-50%) rotate(-2deg);
     background:#fffdf8;
-    padding:17px 20px;
-    width:190px;
+    padding:19px 21px;
+    width:205px;
     text-align:center;
-    box-shadow:0 8px 20px rgba(50,40,30,.12);
+    box-shadow:0 8px 20px rgba(50,40,30,.15);
 }
 
 .cover-note p{
@@ -625,7 +679,9 @@ audio{
 }
 
 
-/* SAVED MEMORIES */
+/* =========================
+   SAVED MEMORIES
+========================= */
 
 .saved-title{
     text-align:center;
@@ -747,8 +803,11 @@ audio{
         padding:10px 16px;
     }
 
+
+    /* MOBILE PHOTO COVER */
+
     .photo-cover{
-        min-height:500px;
+        height:620px;
         margin-left:0;
         margin-right:0;
         padding:25px 10px;
@@ -764,37 +823,72 @@ audio{
         letter-spacing:2px;
     }
 
+
+    /* PHOTO 1 */
+
     .photo1{
-        width:170px;
-        height:205px;
-        left:4%;
-        top:105px;
+        width:125px;
+        height:160px;
+        left:3%;
+        top:92px;
     }
+
+
+    /* PHOTO 2 */
 
     .photo2{
-        width:145px;
-        height:180px;
+        width:120px;
+        height:155px;
         right:3%;
-        top:110px;
+        top:95px;
     }
+
+
+    /* PHOTO 3 */
 
     .photo3{
-        width:145px;
-        height:180px;
-        left:7%;
-        bottom:20px;
+        width:120px;
+        height:155px;
+        left:2%;
+        top:285px;
     }
 
+
+    /* PHOTO 4 */
+
     .photo4{
-        width:170px;
-        height:210px;
-        right:4%;
-        bottom:18px;
+        width:120px;
+        height:155px;
+        right:2%;
+        top:280px;
     }
+
+
+    /* PHOTO 5 */
+
+    .photo5{
+        width:115px;
+        height:145px;
+        left:12%;
+        bottom:12px;
+    }
+
+
+    /* PHOTO 6 */
+
+    .photo6{
+        width:115px;
+        height:145px;
+        right:12%;
+        bottom:12px;
+    }
+
+
+    /* CENTER NOTE */
 
     .cover-note{
         width:145px;
-        padding:12px;
+        padding:13px;
     }
 
     .cover-note p{
@@ -804,6 +898,7 @@ audio{
     .cover-heart{
         font-size:20px;
     }
+
 
     .memory-section{
         margin-top:45px;
@@ -879,7 +974,9 @@ audio{
 </p>
 
 
-<!-- PHOTO COVER -->
+<!-- =====================================================
+     PHOTO COVER — 6 PHOTOS
+===================================================== -->
 
 <section class="photo-cover">
 
@@ -894,6 +991,8 @@ audio{
     </div>
 
 
+    <!-- PHOTO 1 -->
+
     <div class="photo photo1">
 
         <div class="tape"></div>
@@ -902,6 +1001,8 @@ audio{
 
     </div>
 
+
+    <!-- PHOTO 2 -->
 
     <div class="photo photo2">
 
@@ -912,6 +1013,8 @@ audio{
     </div>
 
 
+    <!-- PHOTO 3 -->
+
     <div class="photo photo3">
 
         <div class="tape"></div>
@@ -921,6 +1024,8 @@ audio{
     </div>
 
 
+    <!-- PHOTO 4 -->
+
     <div class="photo photo4">
 
         <div class="tape"></div>
@@ -929,6 +1034,33 @@ audio{
 
     </div>
 
+
+    <!-- PHOTO 5 -->
+
+    <div class="photo photo5">
+
+        <div class="tape"></div>
+
+        <img src="photo5.jpg" alt="Memory 5">
+
+    </div>
+
+
+    <!-- PHOTO 6
+         МЕСТО УЖЕ ЕСТЬ.
+         ПОЗЖЕ ПРОСТО ЗАГРУЗИ photo6.jpg В GITHUB.
+    -->
+
+    <div class="photo photo6">
+
+        <div class="tape"></div>
+
+        <img src="photo6.jpg" alt="Memory 6">
+
+    </div>
+
+
+    <!-- CENTRAL TEXT -->
 
     <div class="cover-note">
 
@@ -1368,8 +1500,6 @@ audio{
     </div>
 
 
-    <!-- SONG QUESTION -->
-
     <p class="memory-question" id="songQuestion">
         Какая из этих песен больше всего
         ассоциируется у тебя с нашими отношениями?
@@ -1455,8 +1585,6 @@ audio{
     </div>
 
 
-    <!-- SONG RESULT -->
-
     <div class="choice-result" id="choiceResult">
 
         <div class="choice-result-title" id="choiceResultTitle"></div>
@@ -1465,8 +1593,6 @@ audio{
 
     </div>
 
-
-    <!-- FEELINGS -->
 
     <p class="feeling-question" id="feelingQuestion">
         Что ты чувствуешь,
@@ -1512,8 +1638,6 @@ audio{
     <div class="feeling-result" id="feelingResult"></div>
 
 
-    <!-- ADD MEMORY -->
-
     <h3 class="message-title" id="messageTitle">
         Напиши что-нибудь от себя
     </h3>
@@ -1543,8 +1667,6 @@ audio{
 
     </div>
 
-
-    <!-- SAVED MEMORIES -->
 
     <h3 class="saved-title" id="savedTitle">
         Твои воспоминания
@@ -2173,8 +2295,6 @@ memorySubmit.addEventListener(
             memoryInput.value.trim();
 
 
-        /* EMPTY */
-
         if(!text){
 
             memoryInput.focus();
@@ -2182,8 +2302,6 @@ memorySubmit.addEventListener(
             return;
         }
 
-
-        /* BUTTON LOADING */
 
         const originalText =
             memorySubmit.textContent;
@@ -2196,8 +2314,6 @@ memorySubmit.addEventListener(
             : "СОХРАНЕНИЕ...";
 
 
-        /* SEND TO SUPABASE */
-
         const { data, error } =
             await supabaseClient
                 .from("memories")
@@ -2209,8 +2325,6 @@ memorySubmit.addEventListener(
                 .select();
 
 
-        /* ERROR */
-
         if(error){
 
             console.error(
@@ -2220,12 +2334,12 @@ memorySubmit.addEventListener(
 
 
             alert(
-    "ОШИБКА SUPABASE:\n\n" +
-    "message: " + error.message +
-    "\ncode: " + error.code +
-    "\ndetails: " + error.details +
-    "\nhint: " + error.hint
-);
+                "ОШИБКА SUPABASE:\n\n" +
+                "message: " + error.message +
+                "\ncode: " + error.code +
+                "\ndetails: " + error.details +
+                "\nhint: " + error.hint
+            );
 
 
             memorySubmit.disabled = false;
@@ -2237,18 +2351,13 @@ memorySubmit.addEventListener(
         }
 
 
-        /* SUCCESS */
-
         memoryInput.value = "";
-
 
         memorySubmit.disabled = false;
 
         memorySubmit.textContent =
             originalText;
 
-
-        /* UPDATE LIST */
 
         await renderMemories();
 
