@@ -43,91 +43,6 @@ body{
     font-family:Georgia,"Times New Roman",serif;
 }
 
-body.intro-lock{
-    overflow:hidden;
-}
-
-
-/* =====================================================
-   OPENING INTRO
-===================================================== */
-
-.opening{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    background:#24211f;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
-}
-
-.opening.hide{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-}
-
-.opening-inner{
-    text-align:center;
-    color:#fffdfa;
-    padding:30px;
-}
-
-.opening-small{
-    font:9px/1.5 Arial,sans-serif;
-    letter-spacing:4px;
-    opacity:.55;
-    margin-bottom:20px;
-    text-transform:uppercase;
-}
-
-.opening-title{
-    font-size:28px;
-    font-weight:400;
-    letter-spacing:4px;
-    margin:0;
-    animation:openingText 1.5s ease;
-}
-
-.opening-line{
-    width:35px;
-    height:1px;
-    background:#9b7068;
-    margin:25px auto 0;
-    animation:openingLine 1.8s ease;
-}
-
-@keyframes openingText{
-    from{
-        opacity:0;
-        transform:translateY(12px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes openingLine{
-    from{
-        width:0;
-        opacity:0;
-    }
-    to{
-        width:35px;
-        opacity:1;
-    }
-}
-
-
-/* =====================================================
-   PAGE
-===================================================== */
-
 .page{
     width:min(100%,760px);
     min-height:100vh;
@@ -137,10 +52,9 @@ body.intro-lock{
     box-shadow:0 0 40px rgba(50,40,30,.06);
 }
 
-
-/* =====================================================
+/* =========================
    LANGUAGE
-===================================================== */
+========================= */
 
 .language-switcher{
     display:flex;
@@ -177,10 +91,9 @@ body.intro-lock{
     box-shadow:0 3px 10px rgba(0,0,0,.12);
 }
 
-
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 h1{
     text-align:center;
@@ -207,14 +120,13 @@ h1{
     margin:0 auto 28px;
 }
 
-
-/* =====================================================
+/* =========================
    PHOTO COVER
-===================================================== */
+========================= */
 
 .photo-cover{
     position:relative;
-    height:620px;
+    height:650px;
     margin:20px -10px 50px;
     padding:35px 20px;
     overflow:hidden;
@@ -253,10 +165,9 @@ h1{
     bottom:-100px;
 }
 
-
-/* =====================================================
+/* =========================
    COVER TITLE
-===================================================== */
+========================= */
 
 .cover-title{
     position:relative;
@@ -279,16 +190,15 @@ h1{
     letter-spacing:3px;
 }
 
-
-/* =====================================================
+/* =========================
    PHOTOS
-===================================================== */
+========================= */
 
 .photo{
     position:absolute;
     z-index:3;
     background:#fff;
-    padding:8px 8px 34px;
+    padding:8px 8px 27px;
     box-shadow:0 12px 25px rgba(45,35,28,.20);
     transition:.3s ease;
 }
@@ -305,20 +215,7 @@ h1{
     z-index:10;
 }
 
-.photo-caption{
-    position:absolute;
-    left:8px;
-    right:8px;
-    bottom:7px;
-    text-align:center;
-    color:#77706b;
-    font:8px/1 Arial,sans-serif;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-}
-
-
-/* PHOTO 1 */
+/* TOP LEFT */
 
 .photo1{
     width:175px;
@@ -328,8 +225,7 @@ h1{
     transform:rotate(-7deg);
 }
 
-
-/* PHOTO 2 */
+/* TOP RIGHT */
 
 .photo2{
     width:165px;
@@ -339,8 +235,7 @@ h1{
     transform:rotate(7deg);
 }
 
-
-/* PHOTO 3 */
+/* MIDDLE LEFT */
 
 .photo3{
     width:160px;
@@ -350,8 +245,7 @@ h1{
     transform:rotate(5deg);
 }
 
-
-/* PHOTO 4 */
+/* MIDDLE RIGHT */
 
 .photo4{
     width:165px;
@@ -361,22 +255,29 @@ h1{
     transform:rotate(-6deg);
 }
 
-
-/* PHOTO 5 */
+/* BOTTOM LEFT */
 
 .photo5{
     width:155px;
     height:195px;
-    left:50%;
-    bottom:10px;
-    margin-left:-77px;
-    transform:rotate(-2deg);
+    left:17%;
+    bottom:12px;
+    transform:rotate(-5deg);
 }
 
+/* BOTTOM RIGHT — PLACE FOR PHOTO 6 */
 
-/* =====================================================
+.photo6{
+    width:155px;
+    height:195px;
+    right:17%;
+    bottom:12px;
+    transform:rotate(6deg);
+}
+
+/* =========================
    TAPE
-===================================================== */
+========================= */
 
 .tape{
     position:absolute;
@@ -389,10 +290,9 @@ h1{
     top:-9px;
 }
 
-
-/* =====================================================
+/* =========================
    CENTER NOTE
-===================================================== */
+========================= */
 
 .cover-note{
     position:absolute;
@@ -422,10 +322,9 @@ h1{
     font-size:25px;
 }
 
-
-/* =====================================================
+/* =========================
    RULE
-===================================================== */
+========================= */
 
 .rule{
     display:flex;
@@ -447,10 +346,9 @@ h1{
     font-size:18px;
 }
 
-
-/* =====================================================
+/* =========================
    SONG
-===================================================== */
+========================= */
 
 .song{
     padding-bottom:30px;
@@ -513,68 +411,12 @@ h1{
     font-style:italic;
 }
 
-
-/* =====================================================
-   CUSTOM AUDIO + VISUALIZER
-===================================================== */
-
-.audio-box{
-    margin-top:20px;
-}
-
-.visualizer{
-    height:42px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:4px;
-    margin-bottom:6px;
-    opacity:.25;
-    transition:.3s ease;
-}
-
-.visualizer span{
-    display:block;
-    width:3px;
-    height:8px;
-    background:var(--accent);
-    border-radius:3px;
-    transform-origin:center;
-}
-
-.visualizer.active{
-    opacity:1;
-}
-
-.visualizer.active span{
-    animation:musicBars .8s ease-in-out infinite alternate;
-}
-
-.visualizer span:nth-child(1){ animation-delay:-.1s; }
-.visualizer span:nth-child(2){ animation-delay:-.4s; }
-.visualizer span:nth-child(3){ animation-delay:-.2s; }
-.visualizer span:nth-child(4){ animation-delay:-.6s; }
-.visualizer span:nth-child(5){ animation-delay:-.3s; }
-.visualizer span:nth-child(6){ animation-delay:-.5s; }
-.visualizer span:nth-child(7){ animation-delay:-.15s; }
-.visualizer span:nth-child(8){ animation-delay:-.45s; }
-.visualizer span:nth-child(9){ animation-delay:-.25s; }
-
-@keyframes musicBars{
-    from{
-        height:6px;
-    }
-    to{
-        height:31px;
-    }
-}
-
 audio{
     display:block;
     width:100%;
     height:40px;
+    margin-top:17px;
 }
-
 
 /* =====================================================
    MEMORY SECTION
@@ -820,10 +662,9 @@ audio{
     transform:none;
 }
 
-
-/* =====================================================
+/* =========================
    SAVED MEMORIES
-===================================================== */
+========================= */
 
 .saved-title{
     text-align:center;
@@ -868,88 +709,33 @@ audio{
     letter-spacing:1.2px;
 }
 
-
-/* =====================================================
-   HIDDEN P.S.
-===================================================== */
-
-.ps-section{
-    margin-top:65px;
+.empty-memories{
     text-align:center;
+    color:#aaa29c;
+    font-size:12px;
+    line-height:1.6;
+    padding:8px 0;
 }
 
-.ps-button{
-    appearance:none;
-    border:0;
-    background:transparent;
-    color:#9b918a;
-    font:10px Arial,sans-serif;
-    letter-spacing:3px;
-    cursor:pointer;
-    padding:10px 15px;
-    transition:.3s ease;
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-.ps-button:hover{
-    color:var(--accent);
-}
-
-.ps-line{
-    width:35px;
-    height:1px;
-    background:var(--line);
-    margin:0 auto 13px;
-}
-
-.ps-letter{
-    max-height:0;
-    opacity:0;
-    overflow:hidden;
-    max-width:520px;
-    margin:0 auto;
-    background:#f7f2ec;
-    border:1px solid transparent;
-    transition:
-        max-height .8s ease,
-        opacity .5s ease,
-        margin .6s ease,
-        padding .6s ease,
-        border-color .6s ease;
-}
-
-.ps-letter.open{
-    max-height:600px;
-    opacity:1;
-    margin-top:18px;
-    padding:28px 25px;
-    border-color:var(--line);
-}
-
-.ps-letter-title{
-    margin:0 0 18px;
-    font-size:18px;
-    font-weight:400;
-    letter-spacing:2px;
-}
-
-.ps-letter-text{
-    margin:0;
-    color:#5f5954;
-    font-size:14px;
-    line-height:1.9;
-}
-
-.ps-signature{
-    margin-top:20px;
-    color:var(--accent);
-    font-style:italic;
-    font-size:15px;
-}
-
-
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 .bottom-heart{
     text-align:center;
@@ -970,27 +756,9 @@ audio{
     display:none!important;
 }
 
-
-/* =====================================================
-   ANIMATION
-===================================================== */
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(5px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
 @media(max-width:600px){
 
@@ -1015,11 +783,10 @@ audio{
         padding:10px 16px;
     }
 
-
     /* MOBILE PHOTO COVER */
 
     .photo-cover{
-        height:570px;
+        height:620px;
         margin-left:0;
         margin-right:0;
         padding:25px 10px;
@@ -1035,6 +802,7 @@ audio{
         letter-spacing:2px;
     }
 
+    /* PHOTO 1 */
 
     .photo1{
         width:125px;
@@ -1043,12 +811,16 @@ audio{
         top:92px;
     }
 
+    /* PHOTO 2 */
+
     .photo2{
         width:120px;
         height:155px;
         right:3%;
         top:95px;
     }
+
+    /* PHOTO 3 */
 
     .photo3{
         width:120px;
@@ -1057,6 +829,8 @@ audio{
         top:285px;
     }
 
+    /* PHOTO 4 */
+
     .photo4{
         width:120px;
         height:155px;
@@ -1064,20 +838,25 @@ audio{
         top:280px;
     }
 
+    /* PHOTO 5 */
+
     .photo5{
         width:115px;
         height:145px;
-        left:50%;
-        bottom:10px;
-        margin-left:-57px;
+        left:12%;
+        bottom:12px;
     }
 
+    /* PHOTO 6 */
 
-    .photo-caption{
-        font-size:6.5px;
-        letter-spacing:1px;
+    .photo6{
+        width:115px;
+        height:145px;
+        right:12%;
+        bottom:12px;
     }
 
+    /* CENTER NOTE */
 
     .cover-note{
         width:145px;
@@ -1091,7 +870,6 @@ audio{
     .cover-heart{
         font-size:20px;
     }
-
 
     .memory-section{
         margin-top:45px;
@@ -1128,52 +906,16 @@ audio{
         padding:16px;
     }
 
-    .ps-letter.open{
-        padding:24px 18px;
-    }
-
-    .ps-letter-text{
-        font-size:13.5px;
-    }
-
 }
 
 </style>
 </head>
 
-
-<body class="intro-lock">
-
-
-<!-- =====================================================
-     OPENING SCREEN
-===================================================== -->
-
-<div class="opening" id="opening">
-
-    <div class="opening-inner">
-
-        <div class="opening-small">
-            OUR SOUNDTRACK
-        </div>
-
-        <h2 class="opening-title">
-            You found our soundtrack.
-        </h2>
-
-        <div class="opening-line"></div>
-
-    </div>
-
-</div>
-
+<body>
 
 <main class="page">
 
-
-<!-- =====================================================
-     LANGUAGE
-===================================================== -->
+<!-- LANGUAGE -->
 
 <div class="language-switcher">
 
@@ -1187,10 +929,7 @@ audio{
 
 </div>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <h1>OUR SOUNDTRACK</h1>
 
@@ -1202,13 +941,11 @@ audio{
     Пять песен, которые стали частью нашей истории.
 </p>
 
-
 <!-- =====================================================
-     PHOTO COVER
+     PHOTO COVER — 6 PHOTOS
 ===================================================== -->
 
 <section class="photo-cover">
-
 
     <div class="cover-title">
 
@@ -1220,7 +957,6 @@ audio{
 
     </div>
 
-
     <!-- PHOTO 1 -->
 
     <div class="photo photo1">
@@ -1229,12 +965,7 @@ audio{
 
         <img src="photo1.jpg" alt="Memory 1">
 
-        <div class="photo-caption">
-            01 · A MEMORY
-        </div>
-
     </div>
-
 
     <!-- PHOTO 2 -->
 
@@ -1244,12 +975,7 @@ audio{
 
         <img src="photo2.JPG" alt="Memory 2">
 
-        <div class="photo-caption">
-            02 · A MOMENT
-        </div>
-
     </div>
-
 
     <!-- PHOTO 3 -->
 
@@ -1259,12 +985,7 @@ audio{
 
         <img src="photo3.jpeg" alt="Memory 3">
 
-        <div class="photo-caption">
-            03 · TOGETHER
-        </div>
-
     </div>
-
 
     <!-- PHOTO 4 -->
 
@@ -1274,12 +995,7 @@ audio{
 
         <img src="photo4.jpeg" alt="Memory 4">
 
-        <div class="photo-caption">
-            04 · US
-        </div>
-
     </div>
-
 
     <!-- PHOTO 5 -->
 
@@ -1289,12 +1005,17 @@ audio{
 
         <img src="photo5.jpeg" alt="Memory 5">
 
-        <div class="photo-caption">
-            05 · ALWAYS
-        </div>
+    </div>
+    
+      <!-- PHOTO 6 -->
+
+    <div class="photo photo6">
+
+        <div class="tape"></div>
+
+        <img src="photo6.JPG" alt="Memory 6">
 
     </div>
-
 
     <!-- CENTRAL TEXT -->
 
@@ -1312,15 +1033,11 @@ audio{
 
 </section>
 
-
 <div class="rule">
     <span>♫</span>
 </div>
 
-
-<!-- =====================================================
-     SONG 01
-===================================================== -->
+<!-- SONG 01 -->
 
 <section class="song">
 
@@ -1406,25 +1123,11 @@ audio{
 
     </div>
 
-
-    <div class="audio-box">
-
-        <div class="visualizer">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-        </div>
-
-        <audio controls preload="none" src="song1.mp3"></audio>
-
-    </div>
+    <audio controls preload="none" src="song1.mp3"></audio>
 
 </section>
 
-
-<!-- =====================================================
-     SONG 02
-===================================================== -->
+<!-- SONG 02 -->
 
 <section class="song">
 
@@ -1512,25 +1215,11 @@ audio{
 
     </div>
 
-
-    <div class="audio-box">
-
-        <div class="visualizer">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-        </div>
-
-        <audio controls preload="none" src="song2.mp3"></audio>
-
-    </div>
+    <audio controls preload="none" src="song2.mp3"></audio>
 
 </section>
 
-
-<!-- =====================================================
-     SONG 03
-===================================================== -->
+<!-- SONG 03 -->
 
 <section class="song">
 
@@ -1602,25 +1291,11 @@ audio{
 
     </div>
 
-
-    <div class="audio-box">
-
-        <div class="visualizer">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-        </div>
-
-        <audio controls preload="none" src="song3.mp3"></audio>
-
-    </div>
+    <audio controls preload="none" src="song3.mp3"></audio>
 
 </section>
 
-
-<!-- =====================================================
-     SONG 04
-===================================================== -->
+<!-- SONG 04 -->
 
 <section class="song">
 
@@ -1690,25 +1365,11 @@ audio{
 
     </div>
 
-
-    <div class="audio-box">
-
-        <div class="visualizer">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-        </div>
-
-        <audio controls preload="none" src="song4.mp3"></audio>
-
-    </div>
+    <audio controls preload="none" src="song4.mp3"></audio>
 
 </section>
 
-
-<!-- =====================================================
-     SONG 05
-===================================================== -->
+<!-- SONG 05 -->
 
 <section class="song">
 
@@ -1770,21 +1431,9 @@ audio{
 
     </div>
 
-
-    <div class="audio-box">
-
-        <div class="visualizer">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-        </div>
-
-        <audio controls preload="none" src="song5.mp3"></audio>
-
-    </div>
+    <audio controls preload="none" src="song5.mp3"></audio>
 
 </section>
-
 
 <!-- =====================================================
      INTERACTIVE MEMORY BLOCK
@@ -1800,12 +1449,10 @@ audio{
         ЕЩЁ ОДНА МАЛЕНЬКАЯ ЧАСТЬ НАШЕЙ ИСТОРИИ
     </div>
 
-
     <p class="memory-question" id="songQuestion">
         Какая из этих песен больше всего
         ассоциируется у тебя с нашими отношениями?
     </p>
-
 
     <div class="song-choices">
 
@@ -1823,7 +1470,6 @@ audio{
 
         </button>
 
-
         <button type="button" class="song-choice" data-song="2">
 
             <span class="choice-number">02</span>
@@ -1837,7 +1483,6 @@ audio{
             </span>
 
         </button>
-
 
         <button type="button" class="song-choice" data-song="3">
 
@@ -1853,7 +1498,6 @@ audio{
 
         </button>
 
-
         <button type="button" class="song-choice" data-song="4">
 
             <span class="choice-number">04</span>
@@ -1867,7 +1511,6 @@ audio{
             </span>
 
         </button>
-
 
         <button type="button" class="song-choice" data-song="5">
 
@@ -1885,7 +1528,6 @@ audio{
 
     </div>
 
-
     <div class="choice-result" id="choiceResult">
 
         <div class="choice-result-title" id="choiceResultTitle"></div>
@@ -1894,12 +1536,10 @@ audio{
 
     </div>
 
-
     <p class="feeling-question" id="feelingQuestion">
         Что ты чувствуешь,
         когда слышишь наши песни?
     </p>
-
 
     <div class="feeling-choices">
 
@@ -1935,9 +1575,7 @@ audio{
 
     </div>
 
-
     <div class="feeling-result" id="feelingResult"></div>
-
 
     <h3 class="message-title" id="messageTitle">
         Напиши что-нибудь от себя
@@ -1947,7 +1585,6 @@ audio{
         То, что хочется оставить здесь.
     </p>
 
-
     <div class="memory-form">
 
         <textarea
@@ -1955,7 +1592,6 @@ audio{
             class="memory-input"
             placeholder="Напиши здесь то, что хочется сказать..."
         ></textarea>
-
 
         <button
             type="button"
@@ -1968,11 +1604,9 @@ audio{
 
     </div>
 
-
     <h3 class="saved-title" id="savedTitle">
         Твои воспоминания
     </h3>
-
 
     <div
         class="memories-list"
@@ -1981,106 +1615,21 @@ audio{
 
 </section>
 
-
-<!-- =====================================================
-     HIDDEN P.S.
-===================================================== -->
-
-<section class="ps-section">
-
-    <div class="ps-line"></div>
-
-    <button
-        type="button"
-        class="ps-button"
-        id="psButton">
-
-        P.S.
-
-    </button>
-
-
-    <div class="ps-letter" id="psLetter">
-
-        <h3 class="ps-letter-title" id="psLetterTitle">
-            Если ты дошёл до сюда...
-        </h3>
-
-        <p class="ps-letter-text" id="psLetterText">
-
-            значит, ты услышал все пять песен,
-            посмотрел наши фотографии
-            и дошёл до самого конца.
-
-            <br><br>
-
-            Я не знаю, какая из этих песен
-            останется у тебя в памяти сильнее,
-            но каждая из них хранит
-            маленькую часть нашей истории.
-
-            <br><br>
-
-            Спасибо за моменты,
-            которые стали воспоминаниями,
-            за музыку,
-            которая теперь связана с нами,
-            и просто за то,
-            что когда-то всё это было.
-
-            <br><br>
-
-            Некоторые вещи невозможно
-            объяснить одной фотографией
-            или одной песней.
-            Поэтому я собрала их все здесь.
-
-        </p>
-
-        <div class="ps-signature">
-            — Д.
-        </div>
-
-    </div>
-
-</section>
-
-
 <div class="bottom-heart">
     ♡
 </div>
-
 
 <div class="footer" id="footer">
     FIVE SONGS · FIVE MEMORIES
 </div>
 
-
 </main>
-
 
 <script>
 
 (function(){
 
 "use strict";
-
-
-/* =====================================================
-   OPENING
-===================================================== */
-
-const opening =
-    document.getElementById("opening");
-
-setTimeout(function(){
-
-    opening.classList.add("hide");
-
-    document.body.classList.remove("intro-lock");
-
-},3000);
-
 
 /* =====================================================
    ELEMENTS
@@ -2152,21 +1701,7 @@ const choiceResultText =
 const feelingResult =
     document.getElementById("feelingResult");
 
-const psButton =
-    document.getElementById("psButton");
-
-const psLetter =
-    document.getElementById("psLetter");
-
-const psLetterTitle =
-    document.getElementById("psLetterTitle");
-
-const psLetterText =
-    document.getElementById("psLetterText");
-
-
 let currentLanguage = "ru";
-
 
 /* =====================================================
    LANGUAGE
@@ -2181,20 +1716,17 @@ function changeLanguage(lang){
     ruButton.classList.toggle("active", !isKz);
     kzButton.classList.toggle("active", isKz);
 
-
     ruBlocks.forEach(function(el){
 
         el.classList.toggle("hidden", isKz);
 
     });
 
-
     kzBlocks.forEach(function(el){
 
         el.classList.toggle("hidden", !isKz);
 
     });
-
 
     if(isKz){
 
@@ -2237,29 +1769,6 @@ function changeLanguage(lang){
         savedTitle.textContent =
             "Сенің естеліктерің";
 
-        psLetterTitle.textContent =
-            "Егер осы жерге дейін жетсең...";
-
-        psLetterText.innerHTML =
-            "демек, сен бес әннің бәрін тыңдап, " +
-            "фотосуреттерімізді көріп, соңына дейін жеттің." +
-            "<br><br>" +
-            "Осы әндердің қайсысы сенің есіңде көбірек " +
-            "қалатынын білмеймін, бірақ олардың әрқайсысында " +
-            "біздің тарихымыздың кішкентай бөлігі бар." +
-            "<br><br>" +
-            "Естелікке айналған сәттер үшін, " +
-            "енді бізбен байланысты болған музыка үшін " +
-            "және осының бәрі бір кездері болғаны үшін рақмет." +
-            "<br><br>" +
-            "Кейбір нәрселерді бір ғана суретпен " +
-            "немесе бір ғана әнмен түсіндіру мүмкін емес. " +
-            "Сондықтан олардың бәрін осында жинадым.";
-
-        psButton.textContent =
-            "P.S.";
-
-
         const feelingTexts = {
 
             love:"♡ Махаббат",
@@ -2270,7 +1779,6 @@ function changeLanguage(lang){
 
         };
 
-
         document
             .querySelectorAll(".feeling-button")
             .forEach(function(button){
@@ -2279,7 +1787,6 @@ function changeLanguage(lang){
                     feelingTexts[button.dataset.feeling];
 
             });
-
 
     }else{
 
@@ -2322,33 +1829,6 @@ function changeLanguage(lang){
         savedTitle.textContent =
             "Твои воспоминания";
 
-        psLetterTitle.textContent =
-            "Если ты дошёл до сюда...";
-
-        psLetterText.innerHTML =
-            "значит, ты услышал все пять песен, " +
-            "посмотрел наши фотографии " +
-            "и дошёл до самого конца." +
-            "<br><br>" +
-            "Я не знаю, какая из этих песен " +
-            "останется у тебя в памяти сильнее, " +
-            "но каждая из них хранит " +
-            "маленькую часть нашей истории." +
-            "<br><br>" +
-            "Спасибо за моменты, " +
-            "которые стали воспоминаниями, " +
-            "за музыку, которая теперь связана с нами, " +
-            "и просто за то, что когда-то всё это было." +
-            "<br><br>" +
-            "Некоторые вещи невозможно " +
-            "объяснить одной фотографией " +
-            "или одной песней. " +
-            "Поэтому я собрала их все здесь.";
-
-        psButton.textContent =
-            "P.S.";
-
-
         const feelingTexts = {
 
             love:"♡ Любовь",
@@ -2358,7 +1838,6 @@ function changeLanguage(lang){
             everything:"♡ Всё сразу"
 
         };
-
 
         document
             .querySelectorAll(".feeling-button")
@@ -2371,11 +1850,9 @@ function changeLanguage(lang){
 
     }
 
-
     renderMemories();
 
 }
-
 
 ruButton.addEventListener(
     "click",
@@ -2384,7 +1861,6 @@ ruButton.addEventListener(
     }
 );
 
-
 kzButton.addEventListener(
     "click",
     function(){
@@ -2392,109 +1868,12 @@ kzButton.addEventListener(
     }
 );
 
-
-/* =====================================================
-   P.S. REVEAL
-===================================================== */
-
-psButton.addEventListener(
-    "click",
-    function(){
-
-        const opened =
-            psLetter.classList.toggle("open");
-
-        if(opened){
-
-            psButton.textContent =
-                currentLanguage === "kz"
-                ? "P.S. · ЖАСЫРЫН ХАТТЫ ЖАСЫРУ"
-                : "P.S. · СКРЫТЬ ПИСЬМО";
-
-        }else{
-
-            psButton.textContent =
-                "P.S.";
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   AUDIO VISUALIZERS
-===================================================== */
-
-const audioElements =
-    document.querySelectorAll("audio");
-
-
-audioElements.forEach(function(audio){
-
-    const visualizer =
-        audio.parentElement.querySelector(".visualizer");
-
-
-    audio.addEventListener(
-        "play",
-        function(){
-
-            audioElements.forEach(function(otherAudio){
-
-                if(otherAudio !== audio){
-
-                    otherAudio.pause();
-
-                }
-
-            });
-
-
-            document
-                .querySelectorAll(".visualizer")
-                .forEach(function(otherVisualizer){
-
-                    otherVisualizer.classList.remove("active");
-
-                });
-
-
-            visualizer.classList.add("active");
-
-        }
-    );
-
-
-    audio.addEventListener(
-        "pause",
-        function(){
-
-            visualizer.classList.remove("active");
-
-        }
-    );
-
-
-    audio.addEventListener(
-        "ended",
-        function(){
-
-            visualizer.classList.remove("active");
-
-        }
-    );
-
-});
-
-
 /* =====================================================
    SONG CHOICES
 ===================================================== */
 
 const songButtons =
     document.querySelectorAll(".song-choice");
-
 
 const songData = {
 
@@ -2512,7 +1891,6 @@ const songData = {
 
     },
 
-
     2:{
 
         ruTitle:"«Ғажайып күй» — АЗИЯ — ТОБЫ",
@@ -2526,7 +1904,6 @@ const songData = {
         "Демек, бұл әнде сен үшін өте ерекше, жеке бір нәрсе бар. Екеуміз ғана түсінетін сезім бар."
 
     },
-
 
     3:{
 
@@ -2542,7 +1919,6 @@ const songData = {
 
     },
 
-
     4:{
 
         ruTitle:"«Сүйгенім» — АЙҚЫН ТӨЛЕПБЕРГЕН",
@@ -2556,7 +1932,6 @@ const songData = {
         "Мүмкін, сен бұл әннен арамызда сақтағың келетін дәл сол сөздер мен сезімдерді еститін шығарсың."
 
     },
-
 
     5:{
 
@@ -2574,7 +1949,6 @@ const songData = {
 
 };
 
-
 songButtons.forEach(function(button){
 
     button.addEventListener(
@@ -2589,10 +1963,8 @@ songButtons.forEach(function(button){
 
             button.classList.add("selected");
 
-
             const song =
                 songData[button.dataset.song];
-
 
             if(currentLanguage === "kz"){
 
@@ -2614,7 +1986,6 @@ songButtons.forEach(function(button){
 
             }
 
-
             choiceResult.classList.add("show");
 
         }
@@ -2622,14 +1993,12 @@ songButtons.forEach(function(button){
 
 });
 
-
 /* =====================================================
    FEELINGS
 ===================================================== */
 
 const feelingButtons =
     document.querySelectorAll(".feeling-button");
-
 
 const feelingData = {
 
@@ -2643,7 +2012,6 @@ const feelingData = {
 
     },
 
-
     warmth:{
 
         ru:
@@ -2653,7 +2021,6 @@ const feelingData = {
         "Онда осы әндердің әрқайсысы тек екеумізге ғана тиесілі жылы сәттерді әрдайым еске салсын."
 
     },
-
 
     nostalgia:{
 
@@ -2665,7 +2032,6 @@ const feelingData = {
 
     },
 
-
     happiness:{
 
         ru:
@@ -2675,7 +2041,6 @@ const feelingData = {
         "Бұл әндер өткенді ғана емес, бізге күлкі сыйлайтын бақытты сәттерді де еске салатынын ойлау маған ұнайды."
 
     },
-
 
     everything:{
 
@@ -2689,7 +2054,6 @@ const feelingData = {
 
 };
 
-
 feelingButtons.forEach(function(button){
 
     button.addEventListener(
@@ -2702,19 +2066,15 @@ feelingButtons.forEach(function(button){
 
             });
 
-
             button.classList.add("selected");
-
 
             const feeling =
                 feelingData[button.dataset.feeling];
-
 
             feelingResult.textContent =
                 currentLanguage === "kz"
                 ? feeling.kz
                 : feeling.ru;
-
 
             feelingResult.classList.add("show");
 
@@ -2722,7 +2082,6 @@ feelingButtons.forEach(function(button){
     );
 
 });
-
 
 /* =====================================================
    SUPABASE MEMORIES
@@ -2735,29 +2094,19 @@ async function renderMemories(){
 
     list.innerHTML = "";
 
-
-    const { data, error } =
-        await supabaseClient
-            .from("memories")
-            .select("*")
-            .order("created_at", {
-                ascending:true
-            });
-
+    const { data, error } = await supabaseClient
+        .from("memories")
+        .select("*")
+        .order("created_at", { ascending: true });
 
     if(error){
 
-        console.error(
-            "Supabase loading error:",
-            error
-        );
-
+        console.error("Supabase loading error:", error);
 
         const empty =
             document.createElement("div");
 
-        empty.className =
-            "empty-memories";
+        empty.className = "empty-memories";
 
         empty.textContent =
             currentLanguage === "kz"
@@ -2767,17 +2116,14 @@ async function renderMemories(){
         list.appendChild(empty);
 
         return;
-
     }
-
 
     if(!data || data.length === 0){
 
         const empty =
             document.createElement("div");
 
-        empty.className =
-            "empty-memories";
+        empty.className = "empty-memories";
 
         empty.textContent =
             currentLanguage === "kz"
@@ -2787,46 +2133,35 @@ async function renderMemories(){
         list.appendChild(empty);
 
         return;
-
     }
-
 
     data.forEach(function(memory){
 
         const card =
             document.createElement("div");
 
-        card.className =
-            "memory-card";
-
+        card.className = "memory-card";
 
         const text =
             document.createElement("p");
 
-        text.className =
-            "memory-card-text";
+        text.className = "memory-card-text";
 
         text.textContent =
             "«" + memory.text_at + "»";
 
-
         const date =
             document.createElement("div");
 
-        date.className =
-            "memory-card-date";
-
+        date.className = "memory-card-date";
 
         const createdDate =
             new Date(memory.created_at);
 
-
         date.textContent =
             formatDate(createdDate);
 
-
         card.appendChild(text);
-
         card.appendChild(date);
 
         list.appendChild(card);
@@ -2834,7 +2169,6 @@ async function renderMemories(){
     });
 
 }
-
 
 /* =====================================================
    ADD MEMORY
@@ -2847,39 +2181,32 @@ memorySubmit.addEventListener(
         const text =
             memoryInput.value.trim();
 
-
         if(!text){
 
             memoryInput.focus();
 
             return;
-
         }
-
 
         const originalText =
             memorySubmit.textContent;
 
-
         memorySubmit.disabled = true;
-
 
         memorySubmit.textContent =
             currentLanguage === "kz"
             ? "САҚТАЛУДА..."
             : "СОХРАНЕНИЕ...";
 
-
         const { data, error } =
             await supabaseClient
                 .from("memories")
                 .insert([
                     {
-                        text_at:text
+                        text_at: text
                     }
                 ])
                 .select();
-
 
         if(error){
 
@@ -2888,45 +2215,33 @@ memorySubmit.addEventListener(
                 error
             );
 
-
             alert(
                 "ОШИБКА SUPABASE:\n\n" +
-                "message: " +
-                error.message +
-                "\ncode: " +
-                error.code +
-                "\ndetails: " +
-                error.details +
-                "\nhint: " +
-                error.hint
+                "message: " + error.message +
+                "\ncode: " + error.code +
+                "\ndetails: " + error.details +
+                "\nhint: " + error.hint
             );
 
-
-            memorySubmit.disabled =
-                false;
+            memorySubmit.disabled = false;
 
             memorySubmit.textContent =
                 originalText;
 
             return;
-
         }
-
 
         memoryInput.value = "";
 
-        memorySubmit.disabled =
-            false;
+        memorySubmit.disabled = false;
 
         memorySubmit.textContent =
             originalText;
-
 
         await renderMemories();
 
     }
 );
-
 
 /* =====================================================
    DATE
@@ -2939,16 +2254,13 @@ function formatDate(date){
             date.getDate()
         ).padStart(2,"0");
 
-
     const month =
         String(
             date.getMonth() + 1
         ).padStart(2,"0");
 
-
     const year =
         date.getFullYear();
-
 
     return (
         day +
@@ -2960,17 +2272,15 @@ function formatDate(date){
 
 }
 
-
 /* =====================================================
    FIRST LOAD
 ===================================================== */
 
 renderMemories();
 
-
 })();
 
 </script>
 
 </body>
-</html>
+</html></html>
