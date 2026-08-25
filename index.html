@@ -7,16 +7,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script>
-const SUPABASE_URL = "https://zqoanzlkuomamprckrje.supabase.co";
-const SUPABASE_KEY = "sb_publishable_fydcJyFEjbTlwxHW45ebwg_2fnDLqlq";
-
-const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
-</script>
-
 <style>
 
 :root{
@@ -49,7 +39,7 @@ body.intro-lock{
 
 
 /* =====================================================
-   OPENING INTRO
+   OPENING
 ===================================================== */
 
 .opening{
@@ -60,9 +50,7 @@ body.intro-lock{
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
+    transition:opacity 1s ease, visibility 1s ease;
 }
 
 .opening.hide{
@@ -218,7 +206,6 @@ h1{
     margin:20px -10px 50px;
     padding:35px 20px;
     overflow:hidden;
-
     background:
         linear-gradient(
             135deg,
@@ -226,7 +213,6 @@ h1{
             #f8f3ec 55%,
             #e9ded3
         );
-
     border:1px solid #ded4ca;
     box-shadow:0 15px 35px rgba(60,45,35,.10);
 }
@@ -317,9 +303,6 @@ h1{
     text-transform:uppercase;
 }
 
-
-/* PHOTO 1 */
-
 .photo1{
     width:175px;
     height:215px;
@@ -327,9 +310,6 @@ h1{
     top:105px;
     transform:rotate(-7deg);
 }
-
-
-/* PHOTO 2 */
 
 .photo2{
     width:165px;
@@ -339,9 +319,6 @@ h1{
     transform:rotate(7deg);
 }
 
-
-/* PHOTO 3 */
-
 .photo3{
     width:160px;
     height:200px;
@@ -350,9 +327,6 @@ h1{
     transform:rotate(5deg);
 }
 
-
-/* PHOTO 4 */
-
 .photo4{
     width:165px;
     height:205px;
@@ -360,9 +334,6 @@ h1{
     top:325px;
     transform:rotate(-6deg);
 }
-
-
-/* PHOTO 5 */
 
 .photo5{
     width:155px;
@@ -515,7 +486,7 @@ h1{
 
 
 /* =====================================================
-   CUSTOM AUDIO + VISUALIZER
+   AUDIO
 ===================================================== */
 
 .audio-box{
@@ -550,23 +521,19 @@ h1{
     animation:musicBars .8s ease-in-out infinite alternate;
 }
 
-.visualizer span:nth-child(1){ animation-delay:-.1s; }
-.visualizer span:nth-child(2){ animation-delay:-.4s; }
-.visualizer span:nth-child(3){ animation-delay:-.2s; }
-.visualizer span:nth-child(4){ animation-delay:-.6s; }
-.visualizer span:nth-child(5){ animation-delay:-.3s; }
-.visualizer span:nth-child(6){ animation-delay:-.5s; }
-.visualizer span:nth-child(7){ animation-delay:-.15s; }
-.visualizer span:nth-child(8){ animation-delay:-.45s; }
-.visualizer span:nth-child(9){ animation-delay:-.25s; }
+.visualizer span:nth-child(1){animation-delay:-.1s;}
+.visualizer span:nth-child(2){animation-delay:-.4s;}
+.visualizer span:nth-child(3){animation-delay:-.2s;}
+.visualizer span:nth-child(4){animation-delay:-.6s;}
+.visualizer span:nth-child(5){animation-delay:-.3s;}
+.visualizer span:nth-child(6){animation-delay:-.5s;}
+.visualizer span:nth-child(7){animation-delay:-.15s;}
+.visualizer span:nth-child(8){animation-delay:-.45s;}
+.visualizer span:nth-child(9){animation-delay:-.25s;}
 
 @keyframes musicBars{
-    from{
-        height:6px;
-    }
-    to{
-        height:31px;
-    }
+    from{height:6px;}
+    to{height:31px;}
 }
 
 audio{
@@ -577,7 +544,7 @@ audio{
 
 
 /* =====================================================
-   MEMORY SECTION
+   MEMORY
 ===================================================== */
 
 .memory-section{
@@ -822,7 +789,7 @@ audio{
 
 
 /* =====================================================
-   SAVED MEMORIES
+   SAVED
 ===================================================== */
 
 .saved-title{
@@ -868,9 +835,16 @@ audio{
     letter-spacing:1.2px;
 }
 
+.empty-memories{
+    text-align:center;
+    color:#9b918a;
+    font:11px Arial,sans-serif;
+    padding:10px;
+}
+
 
 /* =====================================================
-   HIDDEN P.S.
+   P.S.
 ===================================================== */
 
 .ps-section{
@@ -918,7 +892,7 @@ audio{
 }
 
 .ps-letter.open{
-    max-height:600px;
+    max-height:1000px;
     opacity:1;
     margin-top:18px;
     padding:28px 25px;
@@ -937,6 +911,7 @@ audio{
     color:#5f5954;
     font-size:14px;
     line-height:1.9;
+    white-space:normal;
 }
 
 .ps-signature{
@@ -980,7 +955,6 @@ audio{
         opacity:0;
         transform:translateY(5px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
@@ -1015,9 +989,6 @@ audio{
         padding:10px 16px;
     }
 
-
-    /* MOBILE PHOTO COVER */
-
     .photo-cover{
         height:570px;
         margin-left:0;
@@ -1034,7 +1005,6 @@ audio{
         font-size:8px;
         letter-spacing:2px;
     }
-
 
     .photo1{
         width:125px;
@@ -1072,12 +1042,10 @@ audio{
         margin-left:-57px;
     }
 
-
     .photo-caption{
         font-size:6.5px;
         letter-spacing:1px;
     }
-
 
     .cover-note{
         width:145px;
@@ -1091,7 +1059,6 @@ audio{
     .cover-heart{
         font-size:20px;
     }
-
 
     .memory-section{
         margin-top:45px;
@@ -1145,10 +1112,6 @@ audio{
 <body class="intro-lock">
 
 
-<!-- =====================================================
-     OPENING SCREEN
-===================================================== -->
-
 <div class="opening" id="opening">
 
     <div class="opening-inner">
@@ -1171,10 +1134,6 @@ audio{
 <main class="page">
 
 
-<!-- =====================================================
-     LANGUAGE
-===================================================== -->
-
 <div class="language-switcher">
 
     <button type="button" id="ru" class="active">
@@ -1188,10 +1147,6 @@ audio{
 </div>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <h1>OUR SOUNDTRACK</h1>
 
 <div class="subtitle" id="subtitle">
@@ -1202,10 +1157,6 @@ audio{
     Пять песен, которые стали частью нашей истории.
 </p>
 
-
-<!-- =====================================================
-     PHOTO COVER
-===================================================== -->
 
 <section class="photo-cover">
 
@@ -1221,8 +1172,6 @@ audio{
     </div>
 
 
-    <!-- PHOTO 1 -->
-
     <div class="photo photo1">
 
         <div class="tape"></div>
@@ -1235,8 +1184,6 @@ audio{
 
     </div>
 
-
-    <!-- PHOTO 2 -->
 
     <div class="photo photo2">
 
@@ -1251,8 +1198,6 @@ audio{
     </div>
 
 
-    <!-- PHOTO 3 -->
-
     <div class="photo photo3">
 
         <div class="tape"></div>
@@ -1265,8 +1210,6 @@ audio{
 
     </div>
 
-
-    <!-- PHOTO 4 -->
 
     <div class="photo photo4">
 
@@ -1281,8 +1224,6 @@ audio{
     </div>
 
 
-    <!-- PHOTO 5 -->
-
     <div class="photo photo5">
 
         <div class="tape"></div>
@@ -1295,8 +1236,6 @@ audio{
 
     </div>
 
-
-    <!-- CENTRAL TEXT -->
 
     <div class="cover-note">
 
@@ -1318,17 +1257,13 @@ audio{
 </div>
 
 
-<!-- =====================================================
-     SONG 01
-===================================================== -->
+<!-- SONG 01 -->
 
 <section class="song">
 
     <div class="song-top">
 
-        <div class="number">
-            01
-        </div>
+        <div class="number">01</div>
 
         <h2 class="title">
             «Что такое любовь»
@@ -1422,17 +1357,13 @@ audio{
 </section>
 
 
-<!-- =====================================================
-     SONG 02
-===================================================== -->
+<!-- SONG 02 -->
 
 <section class="song">
 
     <div class="song-top">
 
-        <div class="number">
-            02
-        </div>
+        <div class="number">02</div>
 
         <h2 class="title">
             «Ғажайып күй»
@@ -1528,17 +1459,13 @@ audio{
 </section>
 
 
-<!-- =====================================================
-     SONG 03
-===================================================== -->
+<!-- SONG 03 -->
 
 <section class="song">
 
     <div class="song-top">
 
-        <div class="number">
-            03
-        </div>
+        <div class="number">03</div>
 
         <h2 class="title">
             «Вечера»
@@ -1618,17 +1545,13 @@ audio{
 </section>
 
 
-<!-- =====================================================
-     SONG 04
-===================================================== -->
+<!-- SONG 04 -->
 
 <section class="song">
 
     <div class="song-top">
 
-        <div class="number">
-            04
-        </div>
+        <div class="number">04</div>
 
         <h2 class="title">
             «Сүйгенім»
@@ -1706,17 +1629,13 @@ audio{
 </section>
 
 
-<!-- =====================================================
-     SONG 05
-===================================================== -->
+<!-- SONG 05 -->
 
 <section class="song">
 
     <div class="song-top">
 
-        <div class="number">
-            05
-        </div>
+        <div class="number">05</div>
 
         <h2 class="title">
             «Абсолютно всё»
@@ -1787,7 +1706,7 @@ audio{
 
 
 <!-- =====================================================
-     INTERACTIVE MEMORY BLOCK
+     MEMORY SECTION
 ===================================================== -->
 
 <section class="memory-section">
@@ -1810,77 +1729,33 @@ audio{
     <div class="song-choices">
 
         <button type="button" class="song-choice" data-song="1">
-
             <span class="choice-number">01</span>
-
-            <span class="choice-title">
-                «Что такое любовь»
-            </span>
-
-            <span class="choice-artist">
-                ANDRO
-            </span>
-
+            <span class="choice-title">«Что такое любовь»</span>
+            <span class="choice-artist">ANDRO</span>
         </button>
-
 
         <button type="button" class="song-choice" data-song="2">
-
             <span class="choice-number">02</span>
-
-            <span class="choice-title">
-                «Ғажайып күй»
-            </span>
-
-            <span class="choice-artist">
-                АЗИЯ — ТОБЫ
-            </span>
-
+            <span class="choice-title">«Ғажайып күй»</span>
+            <span class="choice-artist">АЗИЯ — ТОБЫ</span>
         </button>
-
 
         <button type="button" class="song-choice" data-song="3">
-
             <span class="choice-number">03</span>
-
-            <span class="choice-title">
-                «Вечера»
-            </span>
-
-            <span class="choice-artist">
-                RAUF & FAIK
-            </span>
-
+            <span class="choice-title">«Вечера»</span>
+            <span class="choice-artist">RAUF & FAIK</span>
         </button>
-
 
         <button type="button" class="song-choice" data-song="4">
-
             <span class="choice-number">04</span>
-
-            <span class="choice-title">
-                «Сүйгенім»
-            </span>
-
-            <span class="choice-artist">
-                АЙҚЫН ТӨЛЕПБЕРГЕН
-            </span>
-
+            <span class="choice-title">«Сүйгенім»</span>
+            <span class="choice-artist">АЙҚЫН ТӨЛЕПБЕРГЕН</span>
         </button>
 
-
         <button type="button" class="song-choice" data-song="5">
-
             <span class="choice-number">05</span>
-
-            <span class="choice-title">
-                «Абсолютно всё»
-            </span>
-
-            <span class="choice-artist">
-                МОТ FEAT. БЬЯНКА
-            </span>
-
+            <span class="choice-title">«Абсолютно всё»</span>
+            <span class="choice-artist">МОТ FEAT. БЬЯНКА</span>
         </button>
 
     </div>
@@ -1956,14 +1831,11 @@ audio{
             placeholder="Напиши здесь то, что хочется сказать..."
         ></textarea>
 
-
         <button
             type="button"
             class="memory-submit"
             id="memorySubmit">
-
             ОСТАВИТЬ ВОСПОМИНАНИЕ ♡
-
         </button>
 
     </div>
@@ -1974,16 +1846,13 @@ audio{
     </h3>
 
 
-    <div
-        class="memories-list"
-        id="memoriesList">
-    </div>
+    <div class="memories-list" id="memoriesList"></div>
 
 </section>
 
 
 <!-- =====================================================
-     HIDDEN P.S.
+     P.S.
 ===================================================== -->
 
 <section class="ps-section">
@@ -1994,9 +1863,7 @@ audio{
         type="button"
         class="ps-button"
         id="psButton">
-
         P.S.
-
     </button>
 
 
@@ -2013,18 +1880,60 @@ audio{
             и дошёл до самого конца.
 
             <br><br>
-я не знаю, какая из этих песен
+
+            я не знаю, какая из этих песен
             останется у тебя в памяти сильнее,
             но каждая из них хранит
             маленькую часть нашей истории.
-я долго думала, что именно хочу тебе сказать, и поняла, что иногда самых простых слов бывает достаточно.
-я люблю тебя. очень сильно и по настоящему.люблю тебя за твой голос, твою улыбку, твой характер, за наши разговоры, наши прогулки и даже за самые обычные моменты рядом с тобой. мне нравится просто быть рядом с тобой и знать, что именно ты тот человек, которого я люблю.
-ты стал для меня очень родным человеком. с тобой связано столько моих чувств, воспоминаний и счастливых моментов, которые я хочу хранить в себе как можно дольше.
-я благодарна тебе за то, что ты появился в моей жизни. за каждую улыбку, каждый взгляд, каждое объятие и за все моменты, которые стали только нашими.
-я не знаю, что ждёт нас впереди, но я знаю, что сейчас я счастлива любить тебя. и мне хочется, чтобы ты всегда чувствовал, насколько ты мне дорог.
-этот подарок всего лишь маленькая часть того, что я хотела бы тебе сказать. просто помни, что где то есть человек, который очень сильно тебя любит. и этот человек я.
-            
+
             <br><br>
+
+            я долго думала, что именно хочу тебе сказать,
+            и поняла, что иногда самых простых слов
+            бывает достаточно.
+
+            <br><br>
+
+            я люблю тебя. очень сильно и по настоящему.
+            люблю тебя за твой голос, твою улыбку,
+            твой характер, за наши разговоры,
+            наши прогулки и даже за самые обычные
+            моменты рядом с тобой.
+            мне нравится просто быть рядом с тобой
+            и знать, что именно ты тот человек,
+            которого я люблю.
+
+            <br><br>
+
+            ты стал для меня очень родным человеком.
+            с тобой связано столько моих чувств,
+            воспоминаний и счастливых моментов,
+            которые я хочу хранить в себе
+            как можно дольше.
+
+            <br><br>
+
+            я благодарна тебе за то,
+            что ты появился в моей жизни.
+            за каждую улыбку, каждый взгляд,
+            каждое объятие и за все моменты,
+            которые стали только нашими.
+
+            <br><br>
+
+            я не знаю, что ждёт нас впереди,
+            но я знаю, что сейчас я счастлива
+            любить тебя.
+            и мне хочется, чтобы ты всегда чувствовал,
+            насколько ты мне дорог.
+
+            <br><br>
+
+            этот подарок всего лишь маленькая часть
+            того, что я хотела бы тебе сказать.
+            просто помни, что где то есть человек,
+            который очень сильно тебя любит.
+            и этот человек я.
 
         </p>
 
@@ -2055,6 +1964,58 @@ audio{
 (function(){
 
 "use strict";
+
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+    "https://zqoanzlkuomamprckrje.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_fydcJyFEjbTlwxHW45ebwg_2fnDLqlq";
+
+let supabaseClient = null;
+
+if(
+    window.supabase &&
+    typeof window.supabase.createClient === "function"
+){
+
+    try{
+
+        supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY,
+                {
+                    auth:{
+                        persistSession:false,
+                        autoRefreshToken:false,
+                        detectSessionInUrl:false
+                    }
+                }
+            );
+
+    }catch(error){
+
+        console.error(
+            "Supabase initialization error:",
+            error
+        );
+
+        supabaseClient = null;
+
+    }
+
+}else{
+
+    console.warn(
+        "Supabase library was not loaded."
+    );
+
+}
 
 
 /* =====================================================
@@ -2160,29 +2121,214 @@ let currentLanguage = "ru";
 
 
 /* =====================================================
+   P.S. TEXT
+===================================================== */
+
+const psRU = `
+значит, ты услышал все пять песен,
+посмотрел наши фотографии
+и дошёл до самого конца.
+
+<br><br>
+
+я не знаю, какая из этих песен
+останется у тебя в памяти сильнее,
+но каждая из них хранит
+маленькую часть нашей истории.
+
+<br><br>
+
+я долго думала, что именно хочу тебе сказать,
+и поняла, что иногда самых простых слов
+бывает достаточно.
+
+<br><br>
+
+я люблю тебя. очень сильно и по настоящему.
+люблю тебя за твой голос, твою улыбку,
+твой характер, за наши разговоры,
+наши прогулки и даже за самые обычные
+моменты рядом с тобой.
+мне нравится просто быть рядом с тобой
+и знать, что именно ты тот человек,
+которого я люблю.
+
+<br><br>
+
+ты стал для меня очень родным человеком.
+с тобой связано столько моих чувств,
+воспоминаний и счастливых моментов,
+которые я хочу хранить в себе
+как можно дольше.
+
+<br><br>
+
+я благодарна тебе за то,
+что ты появился в моей жизни.
+за каждую улыбку, каждый взгляд,
+каждое объятие и за все моменты,
+которые стали только нашими.
+
+<br><br>
+
+я не знаю, что ждёт нас впереди,
+но я знаю, что сейчас я счастлива
+любить тебя.
+и мне хочется, чтобы ты всегда чувствовал,
+насколько ты мне дорог.
+
+<br><br>
+
+этот подарок всего лишь маленькая часть
+того, что я хотела бы тебе сказать.
+просто помни, что где то есть человек,
+который очень сильно тебя любит.
+и этот человек я.
+`;
+
+
+const psKZ = `
+демек, сен бес әннің бәрін тыңдап,
+фотосуреттерімізді көріп,
+соңына дейін жеттің.
+
+<br><br>
+
+осы әндердің қайсысы сенің есіңде
+көбірек қалатынын білмеймін,
+бірақ олардың әрқайсысында
+біздің тарихымыздың кішкентай бөлігі бар.
+
+<br><br>
+
+саған нақты не айтқым келетінін
+ұзақ ойладым.
+кейде ең қарапайым сөздердің
+өзі жеткілікті екенін түсіндім.
+
+<br><br>
+
+мен сені жақсы көремін.
+өте қатты және шын жүрегіммен.
+сенің даусыңды, күлкіңді,
+мінезіңді, әңгімелерімізді,
+серуендерімізді және қасыңда
+өткізген ең қарапайым сәттердің өзін
+жақсы көремін.
+сенің қасыңда болғанды
+және мен жақсы көретін адамның
+дәл сен екеніңді сезінгенді ұнатамын.
+
+<br><br>
+
+сен мен үшін өте жақын адамға айналдың.
+сенің есіміңмен байланысты
+соншама сезімдерім,
+естеліктерім және бақытты сәттерім бар.
+олардың бәрін мүмкіндігінше
+ұзақ сақтағым келеді.
+
+<br><br>
+
+менің өміріме келгенің үшін
+саған ризамын.
+әрбір күлкің үшін,
+әрбір көзқарасың үшін,
+әрбір құшағың үшін
+және тек екеумізге тиесілі болған
+барлық сәттер үшін.
+
+<br><br>
+
+алдағы уақытта не болатынын білмеймін.
+бірақ қазір сені жақсы көріп
+бақытты екенімді білемін.
+және мен үшін қаншалықты қымбат
+екеніңді әрдайым сезінгеніңді қалаймын.
+
+<br><br>
+
+бұл сыйлық —
+саған айтқым келген сөздердің
+кішкентай ғана бөлігі.
+жай ғана есіңде болсын:
+осы жерде сені қатты жақсы көретін
+бір адам бар.
+ол адам — мен.
+`;
+
+
+/* =====================================================
    LANGUAGE
 ===================================================== */
 
+function updateFeelingButtons(){
+
+    const texts =
+        currentLanguage === "kz"
+        ? {
+            love:"♡ Махаббат",
+            warmth:"♡ Жылулық",
+            nostalgia:"♡ Сағыныш",
+            happiness:"♡ Бақыт",
+            everything:"♡ Барлығы бірге"
+        }
+        : {
+            love:"♡ Любовь",
+            warmth:"♡ Тепло",
+            nostalgia:"♡ Ностальгию",
+            happiness:"♡ Счастье",
+            everything:"♡ Всё сразу"
+        };
+
+
+    document
+        .querySelectorAll(".feeling-button")
+        .forEach(function(button){
+
+            button.textContent =
+                texts[button.dataset.feeling];
+
+        });
+
+}
+
+
 function changeLanguage(lang){
 
-    const isKz = lang === "kz";
+    const isKz =
+        lang === "kz";
 
-    currentLanguage = lang;
+    currentLanguage =
+        lang;
 
-    ruButton.classList.toggle("active", !isKz);
-    kzButton.classList.toggle("active", isKz);
+    ruButton.classList.toggle(
+        "active",
+        !isKz
+    );
+
+    kzButton.classList.toggle(
+        "active",
+        isKz
+    );
 
 
     ruBlocks.forEach(function(el){
 
-        el.classList.toggle("hidden", isKz);
+        el.classList.toggle(
+            "hidden",
+            isKz
+        );
 
     });
 
 
     kzBlocks.forEach(function(el){
 
-        el.classList.toggle("hidden", !isKz);
+        el.classList.toggle(
+            "hidden",
+            !isKz
+        );
 
     });
 
@@ -2232,45 +2378,7 @@ function changeLanguage(lang){
             "Егер осы жерге дейін жетсең...";
 
         psLetterText.innerHTML =
-            "демек, сен бес әннің бәрін тыңдап, " +
-            "фотосуреттерімізді көріп, соңына дейін жеттің." +
-            "<br><br>" +
-            "Осы әндердің қайсысы сенің есіңде көбірек " +
-            "қалатынын білмеймін, бірақ олардың әрқайсысында " +
-            "біздің тарихымыздың кішкентай бөлігі бар." +
-            "<br><br>" +
-            "Естелікке айналған сәттер үшін, " +
-            "енді бізбен байланысты болған музыка үшін " +
-            "және осының бәрі бір кездері болғаны үшін рақмет." +
-            "<br><br>" +
-            "Кейбір нәрселерді бір ғана суретпен " +
-            "немесе бір ғана әнмен түсіндіру мүмкін емес. " +
-            "Сондықтан олардың бәрін осында жинадым.";
-
-        psButton.textContent =
-            "P.S.";
-
-
-        const feelingTexts = {
-
-            love:"♡ Махаббат",
-            warmth:"♡ Жылулық",
-            nostalgia:"♡ Сағыныш",
-            happiness:"♡ Бақыт",
-            everything:"♡ Барлығы бірге"
-
-        };
-
-
-        document
-            .querySelectorAll(".feeling-button")
-            .forEach(function(button){
-
-                button.textContent =
-                    feelingTexts[button.dataset.feeling];
-
-            });
-
+            psKZ;
 
     }else{
 
@@ -2317,48 +2425,12 @@ function changeLanguage(lang){
             "Если ты дошёл до сюда...";
 
         psLetterText.innerHTML =
-            "значит, ты услышал все пять песен, " +
-            "посмотрел наши фотографии " +
-            "и дошёл до самого конца." +
-        "я не знаю, какая из этих песен"
-            "останется у тебя в памяти сильнее,"
-            "но каждая из них хранит"
-            "маленькую часть нашей истории."
-"я долго думала, что именно хочу тебе сказать, и поняла, что иногда самых простых слов бывает достаточно."
-"я люблю тебя. очень сильно и по настоящему.люблю тебя за твой голос, твою улыбку, твой характер, за наши разговоры, наши прогулки и даже за самые обычные моменты рядом с тобой. мне нравится просто быть рядом с тобой и знать, что именно ты тот человек, которого я люблю."
-"ты стал для меня очень родным человеком. с тобой связано столько моих чувств, воспоминаний и счастливых моментов, которые я хочу хранить в себе как можно дольше."
-"я благодарна тебе за то, что ты появился в моей жизни. за каждую улыбку, каждый взгляд, каждое объятие и за все моменты, которые стали только нашими."
-"я не знаю, что ждёт нас впереди, но я знаю, что сейчас я счастлива любить тебя. и мне хочется, чтобы ты всегда чувствовал, насколько ты мне дорог."
-"этот подарок всего лишь маленькая часть того, что я хотела бы тебе сказать. просто помни, что где то есть человек, который очень сильно тебя любит. и этот человек я."
-            
-            "<br><br>" +
-
-        psButton.textContent =
-            "P.S.";
-
-
-        const feelingTexts = {
-
-            love:"♡ Любовь",
-            warmth:"♡ Тепло",
-            nostalgia:"♡ Ностальгию",
-            happiness:"♡ Счастье",
-            everything:"♡ Всё сразу"
-
-        };
-
-
-        document
-            .querySelectorAll(".feeling-button")
-            .forEach(function(button){
-
-                button.textContent =
-                    feelingTexts[button.dataset.feeling];
-
-            });
+            psRU;
 
     }
 
+
+    updateFeelingButtons();
 
     renderMemories();
 
@@ -2382,7 +2454,7 @@ kzButton.addEventListener(
 
 
 /* =====================================================
-   P.S. REVEAL
+   P.S.
 ===================================================== */
 
 psButton.addEventListener(
@@ -2391,6 +2463,7 @@ psButton.addEventListener(
 
         const opened =
             psLetter.classList.toggle("open");
+
 
         if(opened){
 
@@ -2411,7 +2484,7 @@ psButton.addEventListener(
 
 
 /* =====================================================
-   AUDIO VISUALIZERS
+   AUDIO
 ===================================================== */
 
 const audioElements =
@@ -2421,34 +2494,43 @@ const audioElements =
 audioElements.forEach(function(audio){
 
     const visualizer =
-        audio.parentElement.querySelector(".visualizer");
+        audio.parentElement
+            .querySelector(".visualizer");
 
 
     audio.addEventListener(
         "play",
         function(){
 
-            audioElements.forEach(function(otherAudio){
+            audioElements.forEach(
+                function(otherAudio){
 
-                if(otherAudio !== audio){
+                    if(otherAudio !== audio){
 
-                    otherAudio.pause();
+                        otherAudio.pause();
+
+                    }
 
                 }
-
-            });
+            );
 
 
             document
                 .querySelectorAll(".visualizer")
-                .forEach(function(otherVisualizer){
+                .forEach(
+                    function(otherVisualizer){
 
-                    otherVisualizer.classList.remove("active");
+                        otherVisualizer
+                            .classList
+                            .remove("active");
 
-                });
+                    }
+                );
 
 
-            visualizer.classList.add("active");
+            visualizer
+                .classList
+                .add("active");
 
         }
     );
@@ -2458,7 +2540,9 @@ audioElements.forEach(function(audio){
         "pause",
         function(){
 
-            visualizer.classList.remove("active");
+            visualizer
+                .classList
+                .remove("active");
 
         }
     );
@@ -2468,7 +2552,9 @@ audioElements.forEach(function(audio){
         "ended",
         function(){
 
-            visualizer.classList.remove("active");
+            visualizer
+                .classList
+                .remove("active");
 
         }
     );
@@ -2487,9 +2573,7 @@ const songButtons =
 const songData = {
 
     1:{
-
         ruTitle:"«Что такое любовь» — ANDRO",
-
         kzTitle:"«Что такое любовь» — ANDRO",
 
         ruText:
@@ -2497,14 +2581,10 @@ const songData = {
 
         kzText:
         "Мүмкін, бұл ән сен үшін біздің тарихымыздың басталуын — алғашқы сезімдерімізді және бәрі басталған сәттерді білдіретін шығар."
-
     },
 
-
     2:{
-
         ruTitle:"«Ғажайып күй» — АЗИЯ — ТОБЫ",
-
         kzTitle:"«Ғажайып күй» — АЗИЯ — ТОБЫ",
 
         ruText:
@@ -2512,14 +2592,10 @@ const songData = {
 
         kzText:
         "Демек, бұл әнде сен үшін өте ерекше, жеке бір нәрсе бар. Екеуміз ғана түсінетін сезім бар."
-
     },
 
-
     3:{
-
         ruTitle:"«Вечера» — RAUF & FAIK",
-
         kzTitle:"«Вечера» — RAUF & FAIK",
 
         ruText:
@@ -2527,14 +2603,10 @@ const songData = {
 
         kzText:
         "Демек, дәл осы ән сен үшін бір-бірімізді қатты сағынған кездеріміздің естелігін сақтап тұр."
-
     },
 
-
     4:{
-
         ruTitle:"«Сүйгенім» — АЙҚЫН ТӨЛЕПБЕРГЕН",
-
         kzTitle:"«Сүйгенім» — АЙҚЫН ТӨЛЕПБЕРГЕН",
 
         ruText:
@@ -2542,14 +2614,10 @@ const songData = {
 
         kzText:
         "Мүмкін, сен бұл әннен арамызда сақтағың келетін дәл сол сөздер мен сезімдерді еститін шығарсың."
-
     },
 
-
     5:{
-
         ruTitle:"«Абсолютно всё» — МОТ feat. БЬЯНКА",
-
         kzTitle:"«Абсолютно всё» — МОТ feat. БЬЯНКА",
 
         ruText:
@@ -2557,7 +2625,6 @@ const songData = {
 
         kzText:
         "Онда бұл ән сен үшін бірге өткен барлық жолымызды және қандай жағдай болса да бір-бірімізді қайта тапқанымызды білдіретін шығар."
-
     }
 
 };
@@ -2569,17 +2636,25 @@ songButtons.forEach(function(button){
         "click",
         function(){
 
-            songButtons.forEach(function(other){
+            songButtons.forEach(
+                function(other){
 
-                other.classList.remove("selected");
+                    other.classList
+                        .remove("selected");
 
-            });
+                }
+            );
 
-            button.classList.add("selected");
+
+            button.classList.add(
+                "selected"
+            );
 
 
             const song =
-                songData[button.dataset.song];
+                songData[
+                    button.dataset.song
+                ];
 
 
             if(currentLanguage === "kz"){
@@ -2603,7 +2678,9 @@ songButtons.forEach(function(button){
             }
 
 
-            choiceResult.classList.add("show");
+            choiceResult.classList.add(
+                "show"
+            );
 
         }
     );
@@ -2616,63 +2693,51 @@ songButtons.forEach(function(button){
 ===================================================== */
 
 const feelingButtons =
-    document.querySelectorAll(".feeling-button");
+    document.querySelectorAll(
+        ".feeling-button"
+    );
 
 
 const feelingData = {
 
     love:{
-
         ru:
         "Значит, в этих песнях для тебя осталось что-то настоящее. То, что словами иногда сказать намного сложнее.",
 
         kz:
         "Демек, бұл әндерде сен үшін шынайы бір сезім сақталған. Кейде оны сөзбен жеткізу әлдеқайда қиын."
-
     },
 
-
     warmth:{
-
         ru:
         "Тогда пусть каждая из этих песен всегда напоминает тебе о тёплых моментах, которые были только нашими.",
 
         kz:
         "Онда осы әндердің әрқайсысы тек екеумізге ғана тиесілі жылы сәттерді әрдайым еске салсын."
-
     },
 
-
     nostalgia:{
-
         ru:
         "Наверное, поэтому музыка и остаётся с нами — она умеет возвращать в моменты, которые уже невозможно повторить точно так же.",
 
         kz:
         "Мүмкін, музыка бізбен сондықтан қалады — ол қайта қайталанбайтын сәттерге бізді қайтара алады."
-
     },
 
-
     happiness:{
-
         ru:
         "Мне нравится думать, что эти песни могут напоминать не только о прошлом, но и о тех моментах, которые заставляют нас улыбаться.",
 
         kz:
         "Бұл әндер өткенді ғана емес, бізге күлкі сыйлайтын бақытты сәттерді де еске салатынын ойлау маған ұнайды."
-
     },
 
-
     everything:{
-
         ru:
         "Наверное, это и есть самое настоящее чувство — когда одна история может вместить любовь, тепло, грусть, ностальгию и счастье одновременно.",
 
         kz:
         "Мүмкін, ең шынайы сезім де осы шығар — бір тарихтың ішінде махаббат, жылулық, мұң, сағыныш пен бақыттың бәрі бірге болуы."
-
     }
 
 };
@@ -2684,18 +2749,25 @@ feelingButtons.forEach(function(button){
         "click",
         function(){
 
-            feelingButtons.forEach(function(other){
+            feelingButtons.forEach(
+                function(other){
 
-                other.classList.remove("selected");
+                    other.classList
+                        .remove("selected");
 
-            });
+                }
+            );
 
 
-            button.classList.add("selected");
+            button.classList.add(
+                "selected"
+            );
 
 
             const feeling =
-                feelingData[button.dataset.feeling];
+                feelingData[
+                    button.dataset.feeling
+                ];
 
 
             feelingResult.textContent =
@@ -2704,7 +2776,9 @@ feelingButtons.forEach(function(button){
                 : feeling.ru;
 
 
-            feelingResult.classList.add("show");
+            feelingResult.classList.add(
+                "show"
+            );
 
         }
     );
@@ -2713,30 +2787,156 @@ feelingButtons.forEach(function(button){
 
 
 /* =====================================================
-   SUPABASE MEMORIES
+   SUPABASE LOAD MEMORIES
 ===================================================== */
 
 async function renderMemories(){
 
     const list =
-        document.getElementById("memoriesList");
+        memoriesList;
 
     list.innerHTML = "";
 
 
-    const { data, error } =
-        await supabaseClient
-            .from("memories")
-            .select("*")
-            .order("created_at", {
-                ascending:true
-            });
+    if(!supabaseClient){
+
+        const empty =
+            document.createElement("div");
+
+        empty.className =
+            "empty-memories";
+
+        empty.textContent =
+            currentLanguage === "kz"
+            ? "Естеліктер бөлімі уақытша қолжетімсіз."
+            : "Раздел воспоминаний временно недоступен.";
+
+        list.appendChild(empty);
+
+        return;
+
+    }
 
 
-    if(error){
+    try{
+
+        const result =
+            await supabaseClient
+                .from("memories")
+                .select("*")
+                .order(
+                    "created_at",
+                    {
+                        ascending:true
+                    }
+                );
+
+
+        const data =
+            result.data;
+
+        const error =
+            result.error;
+
+
+        if(error){
+
+            console.error(
+                "Supabase loading error:",
+                error
+            );
+
+
+            const empty =
+                document.createElement("div");
+
+            empty.className =
+                "empty-memories";
+
+            empty.textContent =
+                currentLanguage === "kz"
+                ? "Естеліктерді жүктеу мүмкін болмады."
+                : "Не удалось загрузить воспоминания.";
+
+            list.appendChild(empty);
+
+            return;
+
+        }
+
+
+        if(!data || data.length === 0){
+
+            const empty =
+                document.createElement("div");
+
+            empty.className =
+                "empty-memories";
+
+            empty.textContent =
+                currentLanguage === "kz"
+                ? "Мұнда әзірге ешқандай естелік жоқ."
+                : "Здесь пока нет воспоминаний.";
+
+            list.appendChild(empty);
+
+            return;
+
+        }
+
+
+        data.forEach(function(memory){
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "memory-card";
+
+
+            const text =
+                document.createElement("p");
+
+            text.className =
+                "memory-card-text";
+
+            text.textContent =
+                "«" +
+                memory.text_at +
+                "»";
+
+
+            const date =
+                document.createElement("div");
+
+            date.className =
+                "memory-card-date";
+
+
+            const createdDate =
+                new Date(
+                    memory.created_at
+                );
+
+
+            date.textContent =
+                formatDate(
+                    createdDate
+                );
+
+
+            card.appendChild(text);
+
+            card.appendChild(date);
+
+            list.appendChild(card);
+
+        });
+
+    }catch(error){
 
         console.error(
-            "Supabase loading error:",
+            "Supabase unexpected error:",
             error
         );
 
@@ -2754,72 +2954,7 @@ async function renderMemories(){
 
         list.appendChild(empty);
 
-        return;
-
     }
-
-
-    if(!data || data.length === 0){
-
-        const empty =
-            document.createElement("div");
-
-        empty.className =
-            "empty-memories";
-
-        empty.textContent =
-            currentLanguage === "kz"
-            ? "Мұнда әзірге ешқандай естелік жоқ."
-            : "Здесь пока нет воспоминаний.";
-
-        list.appendChild(empty);
-
-        return;
-
-    }
-
-
-    data.forEach(function(memory){
-
-        const card =
-            document.createElement("div");
-
-        card.className =
-            "memory-card";
-
-
-        const text =
-            document.createElement("p");
-
-        text.className =
-            "memory-card-text";
-
-        text.textContent =
-            "«" + memory.text_at + "»";
-
-
-        const date =
-            document.createElement("div");
-
-        date.className =
-            "memory-card-date";
-
-
-        const createdDate =
-            new Date(memory.created_at);
-
-
-        date.textContent =
-            formatDate(createdDate);
-
-
-        card.appendChild(text);
-
-        card.appendChild(date);
-
-        list.appendChild(card);
-
-    });
 
 }
 
@@ -2845,11 +2980,27 @@ memorySubmit.addEventListener(
         }
 
 
+        if(!supabaseClient){
+
+            alert(
+                currentLanguage === "kz"
+                ? "Supabase қосылмаған."
+                : "Supabase не подключён."
+            );
+
+            return;
+
+        }
+
+
         const originalText =
-            memorySubmit.textContent;
+            currentLanguage === "kz"
+            ? "ЕСТЕЛІК ҚАЛДЫРУ ♡"
+            : "ОСТАВИТЬ ВОСПОМИНАНИЕ ♡";
 
 
-        memorySubmit.disabled = true;
+        memorySubmit.disabled =
+            true;
 
 
         memorySubmit.textContent =
@@ -2858,35 +3009,70 @@ memorySubmit.addEventListener(
             : "СОХРАНЕНИЕ...";
 
 
-        const { data, error } =
-            await supabaseClient
-                .from("memories")
-                .insert([
-                    {
-                        text_at:text
-                    }
-                ])
-                .select();
+        try{
+
+            const result =
+                await supabaseClient
+                    .from("memories")
+                    .insert([
+                        {
+                            text_at:text
+                        }
+                    ]);
 
 
-        if(error){
+            if(result.error){
+
+                console.error(
+                    "Supabase save error:",
+                    result.error
+                );
+
+
+                alert(
+                    currentLanguage === "kz"
+                    ? "Естелікті сақтау мүмкін болмады.\n\n" +
+                      result.error.message
+                    : "Не удалось сохранить воспоминание.\n\n" +
+                      result.error.message
+                );
+
+
+                memorySubmit.disabled =
+                    false;
+
+                memorySubmit.textContent =
+                    originalText;
+
+                return;
+
+            }
+
+
+            memoryInput.value = "";
+
+
+            memorySubmit.disabled =
+                false;
+
+            memorySubmit.textContent =
+                originalText;
+
+
+            await renderMemories();
+
+        }catch(error){
 
             console.error(
-                "Supabase save error:",
+                "Supabase unexpected save error:",
                 error
             );
 
 
             alert(
-                "ОШИБКА SUPABASE:\n\n" +
-                "message: " +
-                error.message +
-                "\ncode: " +
-                error.code +
-                "\ndetails: " +
-                error.details +
-                "\nhint: " +
-                error.hint
+                currentLanguage === "kz"
+                ? "Естелікті сақтау кезінде қате пайда болды."
+                : "При сохранении воспоминания произошла ошибка."
             );
 
 
@@ -2896,21 +3082,7 @@ memorySubmit.addEventListener(
             memorySubmit.textContent =
                 originalText;
 
-            return;
-
         }
-
-
-        memoryInput.value = "";
-
-        memorySubmit.disabled =
-            false;
-
-        memorySubmit.textContent =
-            originalText;
-
-
-        await renderMemories();
 
     }
 );
@@ -2950,8 +3122,10 @@ function formatDate(date){
 
 
 /* =====================================================
-   FIRST LOAD
+   INITIAL LOAD
 ===================================================== */
+
+updateFeelingButtons();
 
 renderMemories();
 
